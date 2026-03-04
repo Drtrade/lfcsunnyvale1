@@ -1,4 +1,29 @@
 // Units Data - Centralized content management
+
+import childLeader from '../assets/children/LeaderChild.jpeg';
+import childAsst from '../assets/children/AsstChild.jpeg';
+import childSec from '../assets/children/SecChild.jpeg';
+import ccuLeader from '../assets/ccu/LeaderCCU.jpeg';
+import ccuAsst from '../assets/ccu/AsstCCU.jpeg';
+import ccuSec from '../assets/ccu/SecCCU.jpeg';
+import choirLeader from '../assets/choir/LeaderChoir.jpeg';
+import choirAsst from '../assets/choir/AsstChoir.jpeg';
+import choirSec from '../assets/choir/SecChoir.jpeg';
+import mediaLeader from '../assets/media/LeaderMedia.jpeg';
+import mediaAsst from '../assets/media/AsstMedia.jpeg';
+import mediaSec from '../assets/media/SecMedia.jpeg';
+import hospLeader from '../assets/hospitality/LeaderHospitality.jpeg';
+import hospAsst from '../assets/hospitality/AsstHospitality.jpeg';
+import hospSec from '../assets/hospitality/SecHospitality.jpeg';
+import secLeader from '../assets/security/LeaderSecurity.jpeg';
+import secAsst from '../assets/security/AsstSecurity.jpeg';
+import secSec from '../assets/security/SecSecurity.jpeg';
+import trafLeader from '../assets/traffic/LeaderTraffic.jpeg';
+import trafAsst from '../assets/traffic/AsstTraffic.jpeg';
+import trafSec from '../assets/traffic/SecTraffic.jpeg';
+
+
+
 export const unitsData = {
     headline: "Serve in God's House",
   introText: "Service is love in action. At Living Faith Church Sunnyvale, we believe that everyone has a gift and a calling to serve in God's vineyard. Joining a service unit not only builds the church but also builds you — spiritually, emotionally, and socially.",
@@ -13,6 +38,7 @@ export const unitsData = {
   },
 
   units: [
+    //Children's Church Unit
     {
         id: 'children-church',
         name: "Children's Church",
@@ -21,26 +47,31 @@ export const unitsData = {
         ageGroup: "Ages 0-11",
         meetingTime: 'Sundays during main service',
         category: "ministry",
+        whatsapp: {
+          number: "1234567890", // Replace with actual WhatsApp number
+          joinMessage: "Hello! I'm interested in joining the Children's Church unit at LFC Sunnyvale. Please guide me on next steps.",
+          contactMessage: "Hello! I'd like to make an enquiry about the Children's Church unit at LFC Sunnyvale."
+        },
         leadership: {
             leader: {
-                name: "Sarah Williams",
-                title: "children's Church Coordinator",
-                image: "/images/leaders/sarahwilliams.jpg",
-          bio: "Sarah has been serving in children's ministry for over 8 years and has a passion for seeing young lives transformed by God's Word.",
+                name: "Onyike Chidinma Ekeoma",
+                title: "Children's Church Leader",
+                image: childLeader,
+          bio: "Chidinma has been serving in children's ministry for over 8 years and has a passion for seeing young lives transformed by God's Word.",
           contact: "cildrens@lfcsunnyvale.org"
             },
             assistant: {
-                name: "Michael Chen",
+                name: "Anna Onyotse Agbaji",
                 title: "Assistant Coordinator",
-                image: "",
-          bio: "Michael brings creativity and energy to our children's programs, ensuring every child feels loved and valued.",
+                image: childAsst,
+          bio: "Anna brings creativity and energy to our children's programs, ensuring every child feels loved and valued.",
           contact: "childrens@lfcsunnyvale.orh"
             },
-            secretory: {
-                name: "Grace Adeyemi",
+            secretary: {
+                name: "Karale Sira Wiwuga",
                 title: "Administrative Secretory",
-                image: "",
-                          bio: "Grace handles scheduling, communications, and ensures smooth operations in all children's church activities.",
+                image: childSec,
+                          bio: "Karale handles scheduling, communications, and ensures smooth operations in all children's church activities.",
                           contact: "childrens@lfcsunnyvale.org"
 
             }
@@ -59,7 +90,7 @@ export const unitsData = {
         "Commitment to serve at least twice a month"
       ]
     },
-
+    //Teens Unit
     {
       id: 'teens-church',
       name: "Teens Church",
@@ -68,6 +99,11 @@ export const unitsData = {
       ageGroup: "Ages 12-18",
       meetingTime: "Fridays, 7:00 PM - 9:00 PM",
       category: "ministry",
+       whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Teens Church unit at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Teens Church unit at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Pastor David Okonkwo",
@@ -106,6 +142,7 @@ export const unitsData = {
         "Regular attendance and commitment"
       ]
     },
+    //Choir Unit
     {
       id: 'choir-ministry',
       name: "Choir Ministry",
@@ -113,25 +150,30 @@ export const unitsData = {
       fullDesc: "The Choir Ministry is the heartbeat of our worship experience. We are a team of dedicated singers and musicians who use their talents to usher the congregation into God's presence. Through harmonious melodies and spirit-filled performances, we create an atmosphere where hearts are touched and lives are changed.",
       meetingTime: "Saturdays, 12:00 PM - 3:30 PM (Rehearsals)",
       category: "ministry",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Choir Ministry at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Choir Ministry at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
-          name: "Minister Blessing Okoli",
+          name: "Abraham Samson Abiola",
           title: "Choir Director",
-          image: "/images/leaders/blessing-okoli.jpg",
+          image: choirLeader,
           bio: "Minister Blessing has over 15 years of experience in music ministry and leads our choir with passion and excellence.",
           contact: "choir@lfcsunnyvale.org"
         },
         assistant: {
-          name: "Emmanuel Johnson",
+          name: "Iyaji Moses Arome",
           title: "Assistant Choir Director",
-          image: "/images/leaders/emmanuel-johnson.jpg",
+          image: choirAsst,
           bio: "Emmanuel brings technical expertise and musical arrangement skills to enhance our worship experience.",
           contact: "choir@lfcsunnyvale.org"
         },
         secretary: {
-          name: "Mary Thompson",
+          name: "Akpovigwhugwhu Abigail",
           title: "Choir Secretary",
-          image: "/images/leaders/mary-thompson.jpg",
+          image: choirSec,
           bio: "Mary coordinates schedules, manages attendance, and ensures all choir activities run smoothly.",
           contact: "choir@lfcsunnyvale.org"
         }
@@ -150,6 +192,7 @@ export const unitsData = {
         "Availability for Sunday services"
       ]
     },
+    //Deacons Board
     {
       id: 'deacons-board',
       name: "Deacons Board",
@@ -157,6 +200,11 @@ export const unitsData = {
       fullDesc: "The Deacons Board is committed to serving the practical and spiritual needs of our church family. We provide support during times of crisis, coordinate community outreach programs, and ensure that no member of our congregation is overlooked or forgotten.",
       meetingTime: "First Saturday of every month",
       category: "leadership",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Deacons Board at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Deacons Board at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Deacon Peter Nwosu",
@@ -194,6 +242,7 @@ export const unitsData = {
         "Discretion and confidentiality"
       ]
     },
+    //Elders Board
     {
       id: 'elders-board',
       name: "Elders Board",
@@ -201,6 +250,11 @@ export const unitsData = {
       fullDesc: "The Elders Board provides spiritual oversight and strategic direction for the church. We work closely with the pastoral team to ensure doctrinal soundness, shepherd the flock, and maintain the spiritual health of the congregation.",
       meetingTime: "Monthly leadership meetings",
       category: "leadership",
+       whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Elders Board at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Elders Board at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Elder Samuel Adebayo",
@@ -238,32 +292,38 @@ export const unitsData = {
         "Availability for counsel and meetings"
       ]
     },
+    //CCU Unit
     {
       id: 'crowd-control',
-      name: "Crowd Control",
+      name: "Crowd Control Unit (CCU)",
       shortDesc: "Ensuring safety and order during church events and services.",
       fullDesc: "The Crowd Control team is responsible for maintaining order, managing crowd flow, and ensuring the safety of all attendees during church services and events. We create a secure and welcoming environment where everyone can worship without distraction or concern.",
       meetingTime: "30 minutes before each service",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Crowd Control unit at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Crowd Control unit at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
-          name: "Brother Marcus Johnson",
+          name: "Alex Peter Babajock",
           title: "Crowd Control Coordinator",
-          image: "/images/leaders/marcus-johnson.jpg",
+          image: ccuLeader,
           bio: "Marcus has 8 years of experience in event management and brings professional crowd control expertise to our church.",
           contact: "operations@lfcsunnyvale.org"
         },
         assistant: {
-          name: "Brother Kenneth Ude",
+          name: "Uchenna Kingsley",
           title: "Assistant Coordinator",
-          image: "/images/leaders/kenneth-ude.jpg",
+          image: ccuAsst,
           bio: "Kenneth coordinates team schedules and trains new volunteers in crowd management best practices.",
           contact: "operations@lfcsunnyvale.org"
         },
         secretary: {
-          name: "Sister Angela Davis",
+          name: "Diana Luka",
           title: "Team Secretary",
-          image: "/images/leaders/angela-davis.jpg",
+          image: ccuSec,
           bio: "Angela manages team rosters, communications, and incident reporting.",
           contact: "operations@lfcsunnyvale.org"
         }
@@ -282,6 +342,7 @@ export const unitsData = {
         "Punctuality and reliability"
       ]
     },
+    //Sanctuary Cleaning Unit
     {
       id: 'sanctuary-cleaning',
       name: "Sanctuary Cleaning",
@@ -289,6 +350,11 @@ export const unitsData = {
       fullDesc: "The Sanctuary Cleaning team ensures that our worship space is always clean, organized, and presentable. We believe that cleanliness reflects our reverence for God's house and creates a welcoming atmosphere for all who enter.",
       meetingTime: "Saturdays, 9:00 AM - 12:00 PM",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Sanctuary Cleaning team at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Sanctuary Cleaning team at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Sister Patricia Obi",
@@ -326,6 +392,7 @@ export const unitsData = {
         "Saturday morning availability"
       ]
     },
+    //Decorations Unit
     {
       id: 'decorations-team',
       name: "Decorations Team",
@@ -333,6 +400,11 @@ export const unitsData = {
       fullDesc: "The Decorations Team transforms our worship space for special occasions, holidays, and events. We use creativity and excellence to create visually stunning environments that enhance the worship experience and reflect the glory of God.",
       meetingTime: "As needed for events",
       category: "creative",
+       whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Decorations Team at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Decorations Team at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Sister Rachel Garcia",
@@ -370,32 +442,38 @@ export const unitsData = {
         "Physical ability for setup/teardown"
       ]
     },
+    //Media and Creativity Unit
     {
       id: 'media-creativity',
-      name: "Media and Creativity Team",
+      name: "Media and Creativity Unit",
       shortDesc: "Producing multimedia content to enhance worship and outreach efforts.",
       fullDesc: "The Media and Creativity Team harnesses the power of modern technology to spread the gospel and enhance our worship experience. We produce high-quality graphics, videos, social media content, and live streaming services that reach people both in person and online.",
       meetingTime: "Weekly team meetings",
       category: "creative",
+       whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Media and Creativity unit at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Media and Creativity unit at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
-          name: "Brother Stephen Oladele",
+          name: "David Nancy",
           title: "Media Director",
-          image: "/images/leaders/stephen-oladele.jpg",
+          image: mediaLeader,
           bio: "Stephen is a professional multimedia designer with 12 years of experience in church media production.",
           contact: "media@lfcsunnyvale.org"
         },
         assistant: {
-          name: "Sister Michelle Park",
+          name: "Dawodu Ayobami Emmanuel",
           title: "Assistant Media Director",
-          image: "/images/leaders/michelle-park.jpg",
+          image: mediaAsst,
           bio: "Michelle specializes in social media strategy and content creation for digital platforms.",
           contact: "media@lfcsunnyvale.org"
         },
         secretary: {
-          name: "Brother Isaac Chukwu",
+          name: "Omoruyi Faith",
           title: "Media Secretary",
-          image: "/images/leaders/isaac-chukwu.jpg",
+          image: mediaSec,
           bio: "Isaac manages project timelines, content calendars, and team coordination.",
           contact: "media@lfcsunnyvale.org"
         }
@@ -415,32 +493,38 @@ export const unitsData = {
         "Creativity and innovation"
       ]
     },
+    //Hospitality Unit
     {
       id: 'hospitality-team',
-      name: "Hospitality Team",
+      name: "Hospitality Unit",
       shortDesc: "Welcoming and assisting visitors and members during church services and events.",
       fullDesc: "The Hospitality Team is often the first point of contact for visitors and members. We create a warm, welcoming atmosphere and ensure that everyone feels valued and cared for from the moment they arrive until they leave.",
       meetingTime: "30 minutes before each service",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Hospitality unit at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Hospitality unit at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
-          name: "Sister Deborah Udoh",
+          name: "Amina Arinola Onifade",
           title: "Hospitality Coordinator",
-          image: "/images/leaders/deborah-udoh.jpg",
+          image: hospLeader,
           bio: "Deborah has a gift for making people feel welcome and has led our hospitality ministry for 7 years.",
           contact: "hospitality@lfcsunnyvale.org"
         },
         assistant: {
-          name: "Brother Charles Brown",
+          name: "Dcns Aluko Veronica Mojisola",
           title: "Assistant Coordinator",
-          image: "/images/leaders/charles-brown.jpg",
+          image: hospAsst,
           bio: "Charles manages guest services and coordinates special event hospitality.",
           contact: "hospitality@lfcsunnyvale.org"
         },
         secretary: {
-          name: "Sister Esther Ike",
+          name: "Oyininye Anozie Osundi",
           title: "Team Secretary",
-          image: "/images/leaders/esther-ike.jpg",
+          image: hospSec,
           bio: "Esther handles team scheduling, visitor follow-up, and maintains hospitality supplies.",
           contact: "hospitality@lfcsunnyvale.org"
         }
@@ -459,6 +543,7 @@ export const unitsData = {
         "Heart for serving people"
       ]
     },
+    //Technical Unit
     {
       id: 'technical-team',
       name: "Technical Team",
@@ -466,6 +551,11 @@ export const unitsData = {
       fullDesc: "The Technical Team operates behind the scenes to ensure flawless audio, video, and lighting during all church services and events. We use technical excellence to remove distractions and allow the congregation to fully engage in worship.",
       meetingTime: "45 minutes before each service",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Technical Team at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Technical Team at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Brother Daniel Igwe",
@@ -503,6 +593,7 @@ export const unitsData = {
         "Early arrival for services"
       ]
     },
+    //Traffic Control Unit
     {
       id: 'traffic-control',
       name: "Traffic Control Team",
@@ -510,25 +601,30 @@ export const unitsData = {
       fullDesc: "The Traffic Control Team manages parking and traffic flow to ensure safe and efficient arrival and departure for all attendees. We create an organized parking experience that sets a positive tone for worship.",
       meetingTime: "45 minutes before each service",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Traffic Control team at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Traffic Control team at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
-          name: "Brother Solomon Adeleke",
+          name: "Odesomi Toluwani Oluwafunmilayo",
           title: "Traffic Control Coordinator",
-          image: "/images/leaders/solomon-adeleke.jpg",
+          image: trafLeader,
           bio: "Solomon has 9 years of experience in traffic management and ensures smooth operations every service.",
           contact: "operations@lfcsunnyvale.org"
         },
         assistant: {
-          name: "Brother Kevin Martinez",
+          name: "Osunde Jude Imade",
           title: "Assistant Coordinator",
-          image: "/images/leaders/kevin-martinez.jpg",
+          image: trafAsst,
           bio: "Kevin trains new team members and coordinates parking for special events.",
           contact: "operations@lfcsunnyvale.org"
         },
         secretary: {
-          name: "Sister Mercy Ogunleye",
+          name: "Anozie Jessica Ijeoma",
           title: "Team Secretary",
-          image: "/images/leaders/mercy-ogunleye.jpg",
+          image: trafSec,
           bio: "Mercy manages team schedules and maintains communication with all traffic control volunteers.",
           contact: "operations@lfcsunnyvale.org"
         }
@@ -547,6 +643,7 @@ export const unitsData = {
         "Safety consciousness"
       ]
     },
+    //Medical Unit
     {
       id: 'medical-team',
       name: "Medical Team",
@@ -554,6 +651,11 @@ export const unitsData = {
       fullDesc: "The Medical Team stands ready to provide immediate medical response and first aid during all church services and events. We ensure that medical emergencies are handled promptly and professionally, giving peace of mind to our congregation.",
       meetingTime: "15 minutes before each service",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Medical Team at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Medical Team at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Dr. Faith Okoye",
@@ -591,6 +693,7 @@ export const unitsData = {
         "Availability during services"
       ]
     },
+    // Security Unit
     {
       id: 'security-team',
       name: "Security Team",
@@ -598,25 +701,30 @@ export const unitsData = {
       fullDesc: "The Security Team provides professional security services to protect our congregation, visitors, and church property. We maintain a safe environment through vigilant monitoring, access control, and emergency response protocols.",
       meetingTime: "1 hour before each service",
       category: "operations",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Security Team at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Security Team at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
-          name: "Brother Gabriel Nwofor",
+          name: "Dcns Agatha Ifeoma Onovo Okeke",
           title: "Security Coordinator",
-          image: "/images/leaders/gabriel-nwofor.jpg",
+          image: secLeader,
           bio: "Gabriel is a retired law enforcement officer with 25 years of security experience.",
           contact: "security@lfcsunnyvale.org"
         },
         assistant: {
-          name: "Brother Richard Thompson",
+          name: "Desmond Thompson",
           title: "Assistant Security Coordinator",
-          image: "/images/leaders/richard-thompson.jpg",
+          image: secAsst,
           bio: "Richard coordinates security training and emergency response protocols.",
           contact: "security@lfcsunnyvale.org"
         },
         secretary: {
-          name: "Sister Blessing Chidi",
+          name: "Nene Aisha Usman",
           title: "Security Secretary",
-          image: "/images/leaders/blessing-chidi.jpg",
+          image: secSec,
           bio: "Blessing manages team rosters, incident reports, and communication systems.",
           contact: "security@lfcsunnyvale.org"
         }
@@ -635,6 +743,7 @@ export const unitsData = {
         "Strong communication skills"
       ]
     },
+    //Believers Foundation Class Unit
     {
       id: 'believers-foundation',
       name: "Believers Foundation Class",
@@ -642,6 +751,11 @@ export const unitsData = {
       fullDesc: "The Believers Foundation Class is designed to help new believers establish a strong foundation in their Christian faith. Through systematic teaching of biblical principles, we equip members with the knowledge and tools they need to live victoriously and grow spiritually.",
       meetingTime: "Sundays, 8:00 AM - 9:00 AM",
       category: "ministry",
+      whatsapp: {
+        number: "1234567890", // Replace with actual WhatsApp number
+        joinMessage: "Hello! I'm interested in joining the Believers Foundation Class at LFC Sunnyvale. Please guide me on next steps.",
+        contactMessage: "Hello! I'd like to make an enquiry about the Believers Foundation Class at LFC Sunnyvale."
+      },
       leadership: {
         leader: {
           name: "Pastor Mark Ogunyemi",
