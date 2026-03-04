@@ -265,12 +265,20 @@ const UnitsPage = () => {
                       
                       {/* Leader */}
                       <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 text-center">
-                        <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-4 overflow-hidden shadow-lg">
+                        <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-4 shadow-lg relative overflow-hidden">
                           {selectedUnit.leadership.leader.image ? (
                             <img
                               src={selectedUnit.leadership.leader.image}
                               alt={selectedUnit.leadership.leader.name}
-                              className="w-full h-full object-cover"
+                              style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '130%',
+                                objectFit: 'cover',
+                                objectPosition: 'top center'
+                              }}
                               onError={(e) => { e.target.style.display = 'none'; }}
                             />
                           ) : (
@@ -299,12 +307,20 @@ const UnitsPage = () => {
 
                       {/* Assistant Leader */}
                       <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 text-center">
-                        <div className="w-32 h-32 bg-gradient-to-br from-green-600 to-teal-600 rounded-full mx-auto mb-4 overflow-hidden shadow-lg">
+                        <div className="w-32 h-32 bg-gradient-to-br from-green-600 to-teal-600 rounded-full mx-auto mb-4 shadow-lg relative overflow-hidden">
                           {selectedUnit.leadership.assistant.image ? (
                             <img
                               src={selectedUnit.leadership.assistant.image}
                               alt={selectedUnit.leadership.assistant.name}
-                              className="w-full h-full object-cover"
+                              style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '130%',
+                                objectFit: 'cover',
+                                objectPosition: 'top center'
+                              }}
                               onError={(e) => { e.target.style.display = 'none'; }}
                             />
                           ) : (
@@ -333,12 +349,20 @@ const UnitsPage = () => {
 
                       {/* Secretary */}
                       <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 text-center">
-                        <div className="w-32 h-32 bg-gradient-to-br from-orange-600 to-amber-600 rounded-full mx-auto mb-4 overflow-hidden shadow-lg">
+                        <div className="w-32 h-32 bg-gradient-to-br from-orange-600 to-amber-600 rounded-full mx-auto mb-4 shadow-lg relative overflow-hidden">
                           {selectedUnit.leadership.secretary.image ? (
                             <img
                               src={selectedUnit.leadership.secretary.image}
                               alt={selectedUnit.leadership.secretary.name}
-                              className="w-full h-full object-cover"
+                              style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '130%',
+                                objectFit: 'cover',
+                                objectPosition: 'top center'
+                              }}
                               onError={(e) => { e.target.style.display = 'none'; }}
                             />
                           ) : (
