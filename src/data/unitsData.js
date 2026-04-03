@@ -30,9 +30,9 @@ import techSec from "../assets/technical/SecTechnical.jpeg";
 import sancSec from "../assets/sanctuary/SecSanctuary.jpeg";
 import sancLeader from "../assets/sanctuary/LeaderSanctuary.jpeg";
 import sancAsst from "../assets/sanctuary/AsstSanctuary.jpeg";
-import teensLeader from "../assets/teens/LeaderTeens.jpeg";
 import teensAsst from "../assets/teens/AsstTeens.jpeg";
 import teensSec from "../assets/teens/SecTeens.jpeg";
+import teensLeader from "../assets/teens/LeaderTeens.jpeg";
 
 
 export const unitsData = {
