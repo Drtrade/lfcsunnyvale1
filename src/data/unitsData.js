@@ -24,6 +24,16 @@ import trafSec from "../assets/traffic/SecTraffic.jpeg";
 import usherLeader from "../assets/ushering/LeaderUshering.jpeg";
 import usherAsst from "../assets/ushering/AsstUshering.jpeg";
 import usherSec from "../assets/ushering/SecUshering.jpeg";
+import techLeader from "../assets/technical/LeaderTechnical.jpeg";
+import techAsst from "../assets/technical/AsstTechnical.jpeg";
+import techSec from "../assets/technical/SecTechnical.jpeg";
+import sancSec from "../assets/sanctuary/SecSanctuary.jpeg";
+import sancLeader from "../assets/sanctuary/LeaderSanctuary.jpeg";
+import sancAsst from "../assets/sanctuary/AsstSanctuary.jpeg";
+import teensLeader from "../assets/teens/LeaderTeens.jpeg";
+import teensAsst from "../assets/teens/AsstTeens.jpeg";
+import teensSec from "../assets/teens/SecTeens.jpeg";
+
 
 export const unitsData = {
   headline: "Serve in God's House",
@@ -61,21 +71,21 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Onyike Chidinma Ekeoma",
+          name: "Dcns Onyike Chidinma Ekeoma",
           title: "Children's Church Leader",
           image: childLeader,
           bio: "Chidinma has been serving in children's ministry for over 8 years and has a passion for seeing young lives transformed by God's Word.",
           contact: "cildrens@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Anna Onyotse Agbaji",
+          name: "Dcns Anna Onyotse Agbaji",
           title: "Assistant Coordinator",
           image: childAsst,
           bio: "Anna brings creativity and energy to our children's programs, ensuring every child feels loved and valued.",
           contact: "childrens@lfcsunnyvale.orh",
         },
         secretary: {
-          name: "Karale Sira Wiwuga",
+          name: "Sis Karale Sira Wiwuga",
           title: "Administrative Secretory",
           image: childSec,
           bio: "Karale handles scheduling, communications, and ensures smooth operations in all children's church activities.",
@@ -116,23 +126,23 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Pastor David Okonkwo",
-          title: "Teens Church Pastor",
-          image: "/images/leaders/david-okonkwo.jpg",
+          name: "Dcns Joy Eshimhokhai",
+          title: "Teens Church Leader",
+          image: teensLeader,
           bio: "Pastor David has a heart for the youth and has been mentoring teenagers for over 10 years, helping them discover their purpose in God.",
           contact: "teens@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Jennifer Martinez",
-          title: "Assistant Youth Leader",
-          image: "/images/leaders/jennifer-martinez.jpg",
+          name: "Dcn Venda Daniel",
+          title: "Assistant Teens Church Leader",
+          image: teensAsst,
           bio: "Jennifer connects with teens through relevant teaching and creates an atmosphere where they feel understood and valued.",
           contact: "teens@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Daniel Afolabi",
-          title: "Youth Secretary",
-          image: "/images/leaders/daniel-afolabi.jpg",
+          name: "Sis Jessica Devine Alexendar",
+          title: "Teens Church Secretary",
+          image: teensSec,
           bio: "Daniel manages communications, events planning, and keeps our teen community connected and informed.",
           contact: "teens@lfcsunnyvale.org",
         },
@@ -171,21 +181,21 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Abraham Samson Abiola",
+          name: "Bro Abraham Samson Abiola",
           title: "Choir Director",
           image: choirLeader,
           bio: "Minister Abraham has over 15 years of experience in music ministry and leads our choir with passion and excellence.",
           contact: "choir@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Iyaji Moses Arome",
+          name: "Bro Iyaji Moses Arome",
           title: "Assistant Choir Director",
           image: choirAsst,
           bio: "Moses brings technical expertise and musical arrangement skills to enhance our worship experience.",
           contact: "choir@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Akpovigwhugwhu Abigail",
+          name: "Sis Abigail Akpovigwhugwhu",
           title: "Choir Secretary",
           image: choirSec,
           bio: "Abigail coordinates schedules, manages attendance, and ensures all choir activities run smoothly.",
@@ -261,59 +271,59 @@ export const unitsData = {
       ],
     },
     //Elders Board
-    {
-      id: "elders-board",
-      name: "Elders Board",
-      shortDesc:
-        "Providing spiritual guidance and leadership to the church community.",
-      fullDesc:
-        "The Elders Board provides spiritual oversight and strategic direction for the church. We work closely with the pastoral team to ensure doctrinal soundness, shepherd the flock, and maintain the spiritual health of the congregation.",
-      meetingTime: "Monthly leadership meetings",
-      category: "leadership",
-      whatsapp: {
-        number: "1234567890", // Replace with actual WhatsApp number
-        joinMessage:
-          "Hello! I'm interested in joining the Elders Board at LFC Sunnyvale. Please guide me on next steps.",
-        contactMessage:
-          "Hello! I'd like to make an enquiry about the Elders Board at LFC Sunnyvale.",
-      },
-      leadership: {
-        leader: {
-          name: "Elder Samuel Adebayo",
-          title: "Presiding Elder",
-          image: "/images/leaders/samuel-adebayo.jpg",
-          bio: "Elder Samuel brings wisdom and biblical insight from 20 years of ministry experience and leadership.",
-          contact: "elders@lfcsunnyvale.org",
-        },
-        assistant: {
-          name: "Elder Robert Kim",
-          title: "Assistant Presiding Elder",
-          image: "/images/leaders/robert-kim.jpg",
-          bio: "Elder Robert provides strategic planning expertise and oversees church development initiatives.",
-          contact: "elders@lfcsunnyvale.org",
-        },
-        secretary: {
-          name: "Elder Victoria Eze",
-          title: "Board Secretary",
-          image: "/images/leaders/victoria-eze.jpg",
-          bio: "Elder Victoria manages board documentation and ensures effective communication of decisions.",
-          contact: "elders@lfcsunnyvale.org",
-        },
-      },
-      specializations: [
-        "Spiritual oversight and counsel",
-        "Church governance and policy",
-        "Conflict resolution",
-        "Strategic planning",
-        "Doctrinal teaching and guidance",
-      ],
-      requirements: [
-        "Proven spiritual leadership",
-        "Biblical knowledge and maturity",
-        "Commitment to prayer and study",
-        "Availability for counsel and meetings",
-      ],
-    },
+    // {
+    //   id: "elders-board",
+    //   name: "Elders Board",
+    //   shortDesc:
+    //     "Providing spiritual guidance and leadership to the church community.",
+    //   fullDesc:
+    //     "The Elders Board provides spiritual oversight and strategic direction for the church. We work closely with the pastoral team to ensure doctrinal soundness, shepherd the flock, and maintain the spiritual health of the congregation.",
+    //   meetingTime: "Monthly leadership meetings",
+    //   category: "leadership",
+    //   whatsapp: {
+    //     number: "1234567890", // Replace with actual WhatsApp number
+    //     joinMessage:
+    //       "Hello! I'm interested in joining the Elders Board at LFC Sunnyvale. Please guide me on next steps.",
+    //     contactMessage:
+    //       "Hello! I'd like to make an enquiry about the Elders Board at LFC Sunnyvale.",
+    //   },
+    //   leadership: {
+    //     leader: {
+    //       name: "Elder Samuel Adebayo",
+    //       title: "Presiding Elder",
+    //       image: "/images/leaders/samuel-adebayo.jpg",
+    //       bio: "Elder Samuel brings wisdom and biblical insight from 20 years of ministry experience and leadership.",
+    //       contact: "elders@lfcsunnyvale.org",
+    //     },
+    //     assistant: {
+    //       name: "Elder Robert Kim",
+    //       title: "Assistant Presiding Elder",
+    //       image: "/images/leaders/robert-kim.jpg",
+    //       bio: "Elder Robert provides strategic planning expertise and oversees church development initiatives.",
+    //       contact: "elders@lfcsunnyvale.org",
+    //     },
+    //     secretary: {
+    //       name: "Elder Victoria Eze",
+    //       title: "Board Secretary",
+    //       image: "/images/leaders/victoria-eze.jpg",
+    //       bio: "Elder Victoria manages board documentation and ensures effective communication of decisions.",
+    //       contact: "elders@lfcsunnyvale.org",
+    //     },
+    //   },
+    //   specializations: [
+    //     "Spiritual oversight and counsel",
+    //     "Church governance and policy",
+    //     "Conflict resolution",
+    //     "Strategic planning",
+    //     "Doctrinal teaching and guidance",
+    //   ],
+    //   requirements: [
+    //     "Proven spiritual leadership",
+    //     "Biblical knowledge and maturity",
+    //     "Commitment to prayer and study",
+    //     "Availability for counsel and meetings",
+    //   ],
+    // },
     //CCU Unit
     {
       id: "crowd-control",
@@ -332,21 +342,21 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Alex Peter Babajock",
+          name: "Bro Alex Peter Babajock",
           title: "Crowd Control Coordinator",
           image: ccuLeader,
           bio: "Peter has 8 years of experience in event management and brings professional crowd control expertise to our church.",
           contact: "operations@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Uchenna Kingsley",
+          name: "Bro Uchenna Kingsley",
           title: "Assistant Coordinator",
           image: ccuAsst,
           bio: "Kingsley coordinates team schedules and trains new volunteers in crowd management best practices.",
           contact: "operations@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Diana Luka",
+          name: "Sis Diana Luka",
           title: "Team Secretary",
           image: ccuSec,
           bio: "Diana manages team rosters, communications, and incident reporting.",
@@ -369,8 +379,8 @@ export const unitsData = {
     },
     //Sanctuary Cleaning Unit
     {
-      id: "sanctuary-cleaning",
-      name: "Sanctuary Cleaning",
+      id: "sanctuary-unit",
+      name: "Sanctuary Unit",
       shortDesc: "Maintaining a clean and welcoming environment for worship.",
       fullDesc:
         "The Sanctuary Cleaning team ensures that our worship space is always clean, organized, and presentable. We believe that cleanliness reflects our reverence for God's house and creates a welcoming atmosphere for all who enter.",
@@ -385,23 +395,23 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Sister Patricia Obi",
+          name: "Sis Kemi Alison",
           title: "Cleaning Team Coordinator",
-          image: "/images/leaders/patricia-obi.jpg",
+          image: sancLeader,
           bio: "Patricia has dedicated 10 years to keeping God's house beautiful and welcoming for all worshippers.",
           contact: "facilities@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Brother Thomas Lee",
+          name: "Bro Usen Essien Akpabio",
           title: "Assistant Coordinator",
-          image: "/images/leaders/thomas-lee.jpg",
+          image: sancAsst,
           bio: "Thomas manages cleaning supplies inventory and coordinates special cleaning projects.",
           contact: "facilities@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Sister Joy Nnamdi",
+          name: "Bro Joy Nnamdi",
           title: "Team Secretary",
-          image: "/images/leaders/joy-nnamdi.jpg",
+          image: sancSec,
           bio: "Joy schedules cleaning shifts and maintains records of all maintenance activities.",
           contact: "facilities@lfcsunnyvale.org",
         },
@@ -493,21 +503,21 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "David Nancy",
+          name: "Dcns David Nancy",
           title: "Media Director",
           image: mediaLeader,
           bio: "Nancy is a professional multimedia designer with 12 years of experience in church media production.",
           contact: "media@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Dawodu Ayobami Emmanuel",
+          name: "Bro Dawodu Ayobami Emmanuel",
           title: "Assistant Media Director",
           image: mediaAsst,
           bio: "Ayobami specializes in social media strategy and content creation for digital platforms.",
           contact: "media@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Omoruyi Faith",
+          name: "Sis Omoruyi Faith",
           title: "Media Secretary",
           image: mediaSec,
           bio: "Faith manages project timelines, content calendars, and team coordination.",
@@ -562,7 +572,7 @@ export const unitsData = {
           contact: "hospitality@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Onyinye Anozie Osundi",
+          name: "Sis Onyinye Anozie Osundi",
           title: "Team Secretary",
           image: hospSec,
           bio: "Mrs Onyinye handles team scheduling, visitor follow-up, and maintains hospitality supplies.",
@@ -585,8 +595,8 @@ export const unitsData = {
     },
     //Technical Unit
     {
-      id: "technical-team",
-      name: "Technical Team",
+      id: "technical-unit",
+      name: "Technical Unit",
       shortDesc:
         "Managing audio-visual equipment to ensure smooth church services and events.",
       fullDesc:
@@ -602,24 +612,24 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Brother Daniel Igwe",
+          name: "Bro Tope Bello",
           title: "Technical Director",
-          image: "/images/leaders/daniel-igwe.jpg",
-          bio: "Daniel is an audio-visual expert with 15 years of experience in church technical operations.",
+          image: techLeader,
+          bio: "Tope is an audio-visual expert with 15 years of experience in church technical operations.",
           contact: "technical@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Brother Andrew Wilson",
+          name: "Bro Daniel Alex",
           title: "Assistant Technical Director",
-          image: "/images/leaders/andrew-wilson.jpg",
-          bio: "Andrew specializes in sound engineering and trains new technical team members.",
+          image: techAsst,
+          bio: "Alex specializes in sound engineering and trains new technical team members.",
           contact: "technical@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Sister Chioma Nnaji",
+          name: "Sis Joy Joradam",
           title: "Technical Secretary",
-          image: "/images/leaders/chioma-nnaji.jpg",
-          bio: "Chioma manages equipment inventory, maintenance schedules, and team roster.",
+          image: techSec,
+          bio: "Joy manages equipment inventory, maintenance schedules, and team roster.",
           contact: "technical@lfcsunnyvale.org",
         },
       },
@@ -656,21 +666,21 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Odesomi Toluwani Oluwafunmilayo",
+          name: "Sis Odesomi Toluwani Oluwafunmilayo",
           title: "Traffic Control Coordinator",
           image: trafLeader,
           bio: "Toluwani has 9 years of experience in traffic management and ensures smooth operations every service.",
           contact: "operations@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Osunde Jude Imade",
+          name: "Bro Osunde Jude Imade",
           title: "Assistant Coordinator",
           image: trafAsst,
           bio: "Mr Jude trains new team members and coordinates parking for special events.",
           contact: "operations@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Anozie Jessica Ijeoma",
+          name: "Sis Anozie Jessica Ijeoma",
           title: "Team Secretary",
           image: trafSec,
           bio: "Jessica manages team schedules and maintains communication with all traffic control volunteers.",
@@ -771,14 +781,14 @@ export const unitsData = {
           contact: "security@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Desmond Thompson",
+          name: "Bro Desmond Thompson",
           title: "Assistant Security Coordinator",
           image: secAsst,
           bio: "Desmond coordinates security training and emergency response protocols.",
           contact: "security@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Nene Aisha Usman",
+          name: "Sis Nene Aisha Usman",
           title: "Security Secretary",
           image: secSec,
           bio: "Aisha manages team rosters, incident reports, and communication systems.",
@@ -872,21 +882,21 @@ export const unitsData = {
       },
       leadership: {
         leader: {
-          name: "Shittu Bolaji Emmanuel",
+          name: "Bro Shittu Bolaji Emmanuel",
           title: "Head Usher",
           image: usherLeader,
           bio: "Bolaji provides spiritual oversight and leadership to the Ushering Unit, ensuring excellence, discipline, and Christlike hospitality in all services.",
           contact: "ushering@lfcsunnyvale.org",
         },
         assistant: {
-          name: "Gloria Shade Arenyeka",
+          name: "Dcns Gloria Shade Arenyeka",
           title: "Assistant Head Usher",
           image: usherAsst,
           bio: "Dcns Shade coordinates service schedules, training sessions, and supports operational structure within the unit.",
           contact: "ushering@lfcsunnyvale.org",
         },
         secretary: {
-          name: "Yemisi Adebola",
+          name: "Sis Yemisi Adebola",
           title: "Unit Secretary",
           image: usherSec,
           bio: "Yemisi manages rosters, attendance tracking, internal communication, and event coordination logistics.",

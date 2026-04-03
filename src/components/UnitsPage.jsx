@@ -178,16 +178,18 @@ const UnitsPage = () => {
 
             {/* Scroll container — sits above backdrop, does NOT catch clicks except on children */}
             <div
-              className="fixed inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto pointer-events-none"
-              style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+              className="fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto pointer-events-none"
+              // style={{ paddingTop: '1rem', paddingBottom: '1rem' }}
+              style={{ padding: '4rem' }}
             >
+              {/*  Modal Content — pointer-events-auto allows clicks inside the modal */}
               <motion.div
                 key="modal"
                 initial={{ scale: 0.9, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 20 }}
                 transition={{ type: "spring", duration: 0.5 }}
-                className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl pointer-events-auto"
+                className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl pointer-events-auto overflow-hidden"
                 // Do NOT call stopPropagation here — backdrop handles its own click
               >
                 {/* Modal Header */}
@@ -237,7 +239,7 @@ const UnitsPage = () => {
                   
                   {/* Full Description */}
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">About This Ministry</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">About This Unit</h3>
                     <p className="text-gray-700 text-lg leading-relaxed">
                       {selectedUnit.fullDesc}
                     </p>
@@ -412,7 +414,7 @@ const UnitsPage = () => {
                   )}
 
                   {/* ✅ Action Buttons — now open WhatsApp with pre-filled messages */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200">
+                  {/* <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200">
                     <button
                       type="button"
                       onClick={() =>
@@ -440,7 +442,7 @@ const UnitsPage = () => {
                       <MessageCircle size={20} />
                       <span>Contact Leadership</span>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>
