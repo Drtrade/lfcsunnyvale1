@@ -271,59 +271,59 @@ export const unitsData = {
       ],
     },
     //Elders Board
-    {
-      id: "elders-board",
-      name: "Elders Board",
-      shortDesc:
-        "Providing spiritual guidance and leadership to the church community.",
-      fullDesc:
-        "The Elders Board provides spiritual oversight and strategic direction for the church. We work closely with the pastoral team to ensure doctrinal soundness, shepherd the flock, and maintain the spiritual health of the congregation.",
-      meetingTime: "Monthly leadership meetings",
-      category: "leadership",
-      whatsapp: {
-        number: "1234567890", // Replace with actual WhatsApp number
-        joinMessage:
-          "Hello! I'm interested in joining the Elders Board at LFC Sunnyvale. Please guide me on next steps.",
-        contactMessage:
-          "Hello! I'd like to make an enquiry about the Elders Board at LFC Sunnyvale.",
-      },
-      leadership: {
-        leader: {
-          name: "Elder Samuel Adebayo",
-          title: "Presiding Elder",
-          image: "/images/leaders/samuel-adebayo.jpg",
-          bio: "Elder Samuel brings wisdom and biblical insight from 20 years of ministry experience and leadership.",
-          contact: "elders@lfcsunnyvale.org",
-        },
-        assistant: {
-          name: "Elder Robert Kim",
-          title: "Assistant Presiding Elder",
-          image: "/images/leaders/robert-kim.jpg",
-          bio: "Elder Robert provides strategic planning expertise and oversees church development initiatives.",
-          contact: "elders@lfcsunnyvale.org",
-        },
-        secretary: {
-          name: "Elder Victoria Eze",
-          title: "Board Secretary",
-          image: "/images/leaders/victoria-eze.jpg",
-          bio: "Elder Victoria manages board documentation and ensures effective communication of decisions.",
-          contact: "elders@lfcsunnyvale.org",
-        },
-      },
-      specializations: [
-        "Spiritual oversight and counsel",
-        "Church governance and policy",
-        "Conflict resolution",
-        "Strategic planning",
-        "Doctrinal teaching and guidance",
-      ],
-      requirements: [
-        "Proven spiritual leadership",
-        "Biblical knowledge and maturity",
-        "Commitment to prayer and study",
-        "Availability for counsel and meetings",
-      ],
-    },
+    // {
+    //   id: "elders-board",
+    //   name: "Elders Board",
+    //   shortDesc:
+    //     "Providing spiritual guidance and leadership to the church community.",
+    //   fullDesc:
+    //     "The Elders Board provides spiritual oversight and strategic direction for the church. We work closely with the pastoral team to ensure doctrinal soundness, shepherd the flock, and maintain the spiritual health of the congregation.",
+    //   meetingTime: "Monthly leadership meetings",
+    //   category: "leadership",
+    //   whatsapp: {
+    //     number: "1234567890", // Replace with actual WhatsApp number
+    //     joinMessage:
+    //       "Hello! I'm interested in joining the Elders Board at LFC Sunnyvale. Please guide me on next steps.",
+    //     contactMessage:
+    //       "Hello! I'd like to make an enquiry about the Elders Board at LFC Sunnyvale.",
+    //   },
+    //   leadership: {
+    //     leader: {
+    //       name: "Elder Samuel Adebayo",
+    //       title: "Presiding Elder",
+    //       image: "/images/leaders/samuel-adebayo.jpg",
+    //       bio: "Elder Samuel brings wisdom and biblical insight from 20 years of ministry experience and leadership.",
+    //       contact: "elders@lfcsunnyvale.org",
+    //     },
+    //     assistant: {
+    //       name: "Elder Robert Kim",
+    //       title: "Assistant Presiding Elder",
+    //       image: "/images/leaders/robert-kim.jpg",
+    //       bio: "Elder Robert provides strategic planning expertise and oversees church development initiatives.",
+    //       contact: "elders@lfcsunnyvale.org",
+    //     },
+    //     secretary: {
+    //       name: "Elder Victoria Eze",
+    //       title: "Board Secretary",
+    //       image: "/images/leaders/victoria-eze.jpg",
+    //       bio: "Elder Victoria manages board documentation and ensures effective communication of decisions.",
+    //       contact: "elders@lfcsunnyvale.org",
+    //     },
+    //   },
+    //   specializations: [
+    //     "Spiritual oversight and counsel",
+    //     "Church governance and policy",
+    //     "Conflict resolution",
+    //     "Strategic planning",
+    //     "Doctrinal teaching and guidance",
+    //   ],
+    //   requirements: [
+    //     "Proven spiritual leadership",
+    //     "Biblical knowledge and maturity",
+    //     "Commitment to prayer and study",
+    //     "Availability for counsel and meetings",
+    //   ],
+    // },
     //CCU Unit
     {
       id: "crowd-control",
