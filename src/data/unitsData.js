@@ -431,59 +431,59 @@ export const unitsData = {
       ],
     },
     //Decorations Unit
-    {
-      id: "decorations-team",
-      name: "Decorations Team",
-      shortDesc:
-        "Creating beautiful and inspiring decor for church events and services.",
-      fullDesc:
-        "The Decorations Team transforms our worship space for special occasions, holidays, and events. We use creativity and excellence to create visually stunning environments that enhance the worship experience and reflect the glory of God.",
-      meetingTime: "As needed for events",
-      category: "creative",
-      whatsapp: {
-        number: "1234567890", // Replace with actual WhatsApp number
-        joinMessage:
-          "Hello! I'm interested in joining the Decorations Team at LFC Sunnyvale. Please guide me on next steps.",
-        contactMessage:
-          "Hello! I'd like to make an enquiry about the Decorations Team at LFC Sunnyvale.",
-      },
-      leadership: {
-        leader: {
-          name: "Sister Rachel Garcia",
-          title: "Decorations Coordinator",
-          image: "/images/leaders/rachel-garcia.jpg",
-          bio: "Rachel has an eye for design and has been beautifying our church for special events for 6 years.",
-          contact: "creative@lfcsunnyvale.org",
-        },
-        assistant: {
-          name: "Brother Frank Okoro",
-          title: "Assistant Coordinator",
-          image: "/images/leaders/frank-okoro.jpg",
-          bio: "Frank handles logistics, material sourcing, and execution of decoration plans.",
-          contact: "creative@lfcsunnyvale.org",
-        },
-        secretary: {
-          name: "Sister Lisa Wong",
-          title: "Team Secretary",
-          image: "/images/leaders/lisa-wong.jpg",
-          bio: "Lisa coordinates schedules, maintains inventory, and manages team communications.",
-          contact: "creative@lfcsunnyvale.org",
-        },
-      },
-      specializations: [
-        "Event decoration and styling",
-        "Seasonal sanctuary decoration",
-        "Floral arrangements",
-        "Stage and platform design",
-        "Creative theme development",
-      ],
-      requirements: [
-        "Creative flair and artistic ability",
-        "Flexibility with scheduling",
-        "Teamwork and collaboration",
-        "Physical ability for setup/teardown",
-      ],
-    },
+    // {
+    //   id: "decorations-team",
+    //   name: "Decorations Team",
+    //   shortDesc:
+    //     "Creating beautiful and inspiring decor for church events and services.",
+    //   fullDesc:
+    //     "The Decorations Team transforms our worship space for special occasions, holidays, and events. We use creativity and excellence to create visually stunning environments that enhance the worship experience and reflect the glory of God.",
+    //   meetingTime: "As needed for events",
+    //   category: "creative",
+    //   whatsapp: {
+    //     number: "1234567890", // Replace with actual WhatsApp number
+    //     joinMessage:
+    //       "Hello! I'm interested in joining the Decorations Team at LFC Sunnyvale. Please guide me on next steps.",
+    //     contactMessage:
+    //       "Hello! I'd like to make an enquiry about the Decorations Team at LFC Sunnyvale.",
+    //   },
+    //   leadership: {
+    //     leader: {
+    //       name: "Sister Rachel Garcia",
+    //       title: "Decorations Coordinator",
+    //       image: "/images/leaders/rachel-garcia.jpg",
+    //       bio: "Rachel has an eye for design and has been beautifying our church for special events for 6 years.",
+    //       contact: "creative@lfcsunnyvale.org",
+    //     },
+    //     assistant: {
+    //       name: "Brother Frank Okoro",
+    //       title: "Assistant Coordinator",
+    //       image: "/images/leaders/frank-okoro.jpg",
+    //       bio: "Frank handles logistics, material sourcing, and execution of decoration plans.",
+    //       contact: "creative@lfcsunnyvale.org",
+    //     },
+    //     secretary: {
+    //       name: "Sister Lisa Wong",
+    //       title: "Team Secretary",
+    //       image: "/images/leaders/lisa-wong.jpg",
+    //       bio: "Lisa coordinates schedules, maintains inventory, and manages team communications.",
+    //       contact: "creative@lfcsunnyvale.org",
+    //     },
+    //   },
+    //   specializations: [
+    //     "Event decoration and styling",
+    //     "Seasonal sanctuary decoration",
+    //     "Floral arrangements",
+    //     "Stage and platform design",
+    //     "Creative theme development",
+    //   ],
+    //   requirements: [
+    //     "Creative flair and artistic ability",
+    //     "Flexibility with scheduling",
+    //     "Teamwork and collaboration",
+    //     "Physical ability for setup/teardown",
+    //   ],
+    // },
     //Media and Creativity Unit
     {
       id: "media-creativity",
