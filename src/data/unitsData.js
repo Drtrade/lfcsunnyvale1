@@ -30,9 +30,9 @@ import techSec from "../assets/technical/SecTechnical.jpeg";
 import sancSec from "../assets/sanctuary/SecSanctuary.jpeg";
 import sancLeader from "../assets/sanctuary/LeaderSanctuary.jpeg";
 import sancAsst from "../assets/sanctuary/AsstSanctuary.jpeg";
-import teenLeader from "../assets/teens/LeaderTeens.jpeg";
-import teenAsst from "../assets/teens/AsstTeens.jpeg";
-import teenSec from "../assets/teens/SecTeens.jpeg";
+import teenLeader from "../assets/teen/LeaderTeens.jpeg";
+import teenAsst from "../assets/teen/AsstTeens.jpeg";
+import teenSec from "../assets/teen/SecTeens.jpeg";
 
 export const unitsData = {
   headline: "Serve in God's House",
