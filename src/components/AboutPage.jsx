@@ -148,33 +148,49 @@ const AboutPage = () => {
           </div>
         </motion.div>
 
-        {/* Assistant Pastors Grid */}
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-800">{aboutData.leadership.assistantPastors.title}</h3>
-            <p className="text-gray-500 mt-2">{aboutData.leadership.assistantPastors.description}</p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {aboutData.leadership.assistantPastors.members?.map((pastor, idx) => (
-              <motion.div 
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="bg-white p-5 rounded-2xl shadow-md border border-gray-50 text-center"
+
+        {/* Assistant Resident Pastor Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl p-6 md:p-10 shadow-xl mb-12 max-w-5xl mx-auto overflow-hidden border border-gray-100"
+        >
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center text-center md:text-left">
+            <div className="relative group flex-shrink-0">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center border-4 border-white shadow-lg">
+                {aboutData.leadership. assistantPastor.image ? (
+                  <img 
+                    src={aboutData.leadership. assistantPastor.image} 
+                    alt={aboutData.leadership. assistantPastor.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <User className="text-gray-300" size={80} />
+                )}
+              </div>
+            </div>
+            
+            <div className="flex-grow">
+              <div className="mb-4">
+                <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-1">{aboutData.leadership. assistantPastor.name}</h3>
+                <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership. assistantPastor.title}</p>
+              </div>
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership. assistantPastor.description}"</p>
+              <a
+                href={`mailto:${aboutData.leadership. assistantPastor.email}`}
+                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 w-full sm:w-auto justify-center"
               >
-                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden bg-blue-50 border-2 border-blue-100">
-                  {pastor.image ? (
-                    <img src={pastor.image} alt={pastor.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-blue-200"><User size={40} /></div>
-                  )}
-                </div>
-                <h4 className="font-bold text-gray-800">{pastor.name}</h4>
-                <p className="text-xs text-blue-600 font-medium uppercase tracking-tighter mt-1">{pastor.role}</p>
-              </motion.div>
-            ))}
+                <Mail size={18} />
+                <span>Message Pastor</span>
+              </a>
+            </div>
           </div>
-        </div>
+        </motion.div>
+
+        
+       
       </section>
 
       {/* Our Story & Milestones */}
@@ -218,7 +234,6 @@ const AboutPage = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Join Our Growing Family</h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg">Plan Your Visit</button>
-          <button className="bg-gray-100 text-gray-700 px-8 py-4 rounded-xl font-bold">Contact Us</button>
         </div>
       </section>
     </div>

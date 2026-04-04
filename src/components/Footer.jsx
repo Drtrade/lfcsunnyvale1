@@ -47,20 +47,20 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400 text-sm">
               <li className="flex justify-between sm:block lg:flex">
                 <span className="font-medium text-gray-300">Sunday:</span> 
-                <span className="ml-1">9:00 AM</span>
+                <span className="ml-1">7:00 AM & 9:00 AM</span>
               </li>
               <li className="flex justify-between sm:block lg:flex">
                 <span className="font-medium text-gray-300">Wednesday:</span> 
-                <span className="ml-1">6:00 PM</span>
+                <span className="ml-1">5:30 PM - 7:30 PM</span>
               </li>
-              <li className="flex justify-between sm:block lg:flex">
-                <span className="font-medium text-gray-300">Friday:</span> 
+              {/* <li className="flex justify-between sm:block lg:flex">
+                <span className="font-medium text-gray-300">:</span> 
                 <span className="ml-1">7:00 PM</span>
               </li>
               <li className="flex justify-between sm:block lg:flex">
                 <span className="font-medium text-gray-300">Saturday:</span> 
                 <span className="ml-1">10:00 AM</span>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -98,7 +98,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm gap-4">
             <p>© {new Date().getFullYear()} Living Faith Church Sunnyvale. All rights reserved.</p>
             <p className="flex items-center">
-              Built with <span className="text-red-500 mx-1 animate-pulse">❤️</span> for the Kingdom
+              Built by Temple with <span className="text-red-500 mx-1 animate-pulse">❤️</span> for the Kingdom
             </p>
           </div>
         </div>

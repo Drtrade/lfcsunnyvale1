@@ -7,8 +7,8 @@ export const contactData = {
   contactDetails: {
     address: {
       line1: "Living Faith Church, Sunnyvale Estate",
-      line2: "Abuja, Nigeria",
-      full: "Living Faith Church, Sunnyvale Estate, Abuja, Nigeria"
+      line2: "Dakwo District, Abuja",
+      full: "Living Faith Church, Sunnyvale Estate, Dakwo, Abuja, Nigeria"
     },
     phone: "+234 [Insert Church Number]", // UPDATE with actual number
     email: "info@lfcsunnyvale.org",
@@ -25,7 +25,8 @@ export const contactData = {
     twitter: "https://twitter.com/lfcsunnyvale"
   },
 
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8384847207047!2d7.491302!3d9.072264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDQnMjAuMiJOIDfCsDI5JzI4LjciRQ!5e0!3m2!1sen!2sng!4v1234567890", // UPDATE with actual map embed URL
+  // This matches the actual location you provided for Dakwo
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.8567499858214!2d7.44349397572455!3d8.985326591074312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0d676e6776b3%3A0x6f74d528dfe431b!2sLiving%20Faith%20Church%2C%20Sunnyvale!5e0!3m2!1sen!2sus!4v1775303062540!5m2!1sen!2sus" ,
 
   formSubjects: [
     "Prayer Request",
