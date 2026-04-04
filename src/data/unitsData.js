@@ -30,9 +30,9 @@ import techSec from "../assets/technical/SecTechnical.jpeg";
 import sancSec from "../assets/sanctuary/SecSanctuary.jpeg";
 import sancLeader from "../assets/sanctuary/LeaderSanctuary.jpeg";
 import sancAsst from "../assets/sanctuary/AsstSanctuary.jpeg";
-import teensLeader from "../assets/teens/LeaderTeens.jpeg";
-import teensAsst from "../assets/teens/AsstTeens.jpeg";
-import teensSec from "../assets/teens/SecTeens.jpeg";
+import teenLeader from "../assets/teens/LeaderTeens.jpeg";
+import teenAsst from "../assets/teens/AsstTeens.jpeg";
+import teenSec from "../assets/teens/SecTeens.jpeg";
 
 export const unitsData = {
   headline: "Serve in God's House",
@@ -127,21 +127,21 @@ export const unitsData = {
         leader: {
           name: "Dcns Joy Eshimhokhai",
           title: "Teens Church Leader",
-          image: teensLeader,
+          image: teenLeader,
           bio: "Pastor David has a heart for the youth and has been mentoring teenagers for over 10 years, helping them discover their purpose in God.",
           contact: "teens@lfcsunnyvale.org",
         },
         assistant: {
           name: "Dcn Venda Daniel",
           title: "Assistant Teens Church Leader",
-          image: teensAsst,
+          image: teenAsst,
           bio: "Jennifer connects with teens through relevant teaching and creates an atmosphere where they feel understood and valued.",
           contact: "teens@lfcsunnyvale.org",
         },
         secretary: {
           name: "Sis Jessica Devine Alexendar",
           title: "Teens Church Secretary",
-          image: teensSec,
+          image: teenSec,
           bio: "Daniel manages communications, events planning, and keeps our teen community connected and informed.",
           contact: "teens@lfcsunnyvale.org",
         },
