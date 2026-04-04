@@ -1,74 +1,106 @@
+import React from 'react';
 import { Mail, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-white mt-16 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        {/* Responsive Grid: 1 col on mobile, 2 on tablet, 4 on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
           
           {/* Brand Column */}
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">LFC</span>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-xl tracking-tighter">LFC</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold">LFC Sunnyvale</h3>
-                <p className="text-sm text-gray-400">Living Faith Church</p>
+                <h3 className="text-lg font-bold leading-tight">LFC Sunnyvale</h3>
+                <p className="text-xs text-gray-400 uppercase tracking-widest font-semibold">Living Faith Church</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               A community of believers transforming lives through faith, love, and service.
             </p>
           </div>
 
           {/* Quick Links Column */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li className="hover:text-white transition-colors cursor-pointer">About Us</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Services</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Ministries</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Events</li>
+            <h4 className="font-bold text-white text-base mb-5 pb-2 border-b border-gray-800 inline-block">
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              {['About Us', 'Services', 'Ministries', 'Events'].map((link) => (
+                <li key={link} className="hover:text-blue-400 transition-colors cursor-pointer flex items-center group">
+                  <span className="w-0 group-hover:w-2 h-0.5 bg-blue-500 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                  {link}
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Service Times Column */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Service Times</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li>Sunday: 9:00 AM</li>
-              <li>Wednesday: 6:00 PM</li>
-              <li>Friday: 7:00 PM</li>
-              <li>Saturday: 10:00 AM</li>
+            <h4 className="font-bold text-white text-base mb-5 pb-2 border-b border-gray-800 inline-block">
+              Service Times
+            </h4>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              <li className="flex justify-between sm:block lg:flex">
+                <span className="font-medium text-gray-300">Sunday:</span> 
+                <span className="ml-1">9:00 AM</span>
+              </li>
+              <li className="flex justify-between sm:block lg:flex">
+                <span className="font-medium text-gray-300">Wednesday:</span> 
+                <span className="ml-1">6:00 PM</span>
+              </li>
+              <li className="flex justify-between sm:block lg:flex">
+                <span className="font-medium text-gray-300">Friday:</span> 
+                <span className="ml-1">7:00 PM</span>
+              </li>
+              <li className="flex justify-between sm:block lg:flex">
+                <span className="font-medium text-gray-300">Saturday:</span> 
+                <span className="ml-1">10:00 AM</span>
+              </li>
             </ul>
           </div>
 
           {/* Connect Column */}
-          <div>
-            <h4 className="font-bold text-lg mb-4">Connect With Us</h4>
-            <div className="flex space-x-3 mb-4">
-              <button className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors">
-                <Facebook size={18} />
-              </button>
-              <button className="w-10 h-10 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center transition-colors">
-                <Instagram size={18} />
-              </button>
-              <button className="w-10 h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-colors">
-                <Youtube size={18} />
-              </button>
+          <div className="flex flex-col">
+            <h4 className="font-bold text-white text-base mb-5 pb-2 border-b border-gray-800 inline-block self-start">
+              Connect With Us
+            </h4>
+            <div className="flex space-x-4 mb-6">
+              {[
+                { Icon: Facebook, color: 'bg-blue-600', hover: 'hover:bg-blue-700' },
+                { Icon: Instagram, color: 'bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600', hover: 'opacity-90 hover:opacity-100' },
+                { Icon: Youtube, color: 'bg-red-600', hover: 'hover:bg-red-700' }
+              ].map((social, i) => (
+                <button 
+                  key={i} 
+                  className={`w-10 h-10 ${social.color} ${social.hover} rounded-xl flex items-center justify-center transition-all transform hover:-translate-y-1 shadow-md`}
+                >
+                  <social.Icon size={18} className="text-white" />
+                </button>
+              ))}
             </div>
-            <p className="text-gray-400 text-sm">
-              <Mail className="inline mr-2" size={14} />
+            <a 
+              href="mailto:info@lfcsunnyvale.org" 
+              className="text-gray-400 text-sm hover:text-white transition-colors flex items-center group"
+            >
+              <Mail className="mr-2 text-blue-500 group-hover:scale-110 transition-transform" size={16} />
               info@lfcsunnyvale.org
-            </p>
+            </a>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>© 2025 Living Faith Church Sunnyvale. All rights reserved.</p>
-          <p className="mt-2">Built with ❤️ for the Kingdom</p>
+        {/* Copyright Section */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm gap-4">
+            <p>© {new Date().getFullYear()} Living Faith Church Sunnyvale. All rights reserved.</p>
+            <p className="flex items-center">
+              Built with <span className="text-red-500 mx-1 animate-pulse">❤️</span> for the Kingdom
+            </p>
+          </div>
         </div>
       </div>
     </footer>

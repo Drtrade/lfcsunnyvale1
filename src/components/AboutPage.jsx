@@ -10,12 +10,13 @@ import {
   Shield,
   TrendingUp,
   Mail,
-  Quote
+  Quote,
+  User
 } from 'lucide-react';
 import aboutData from '../data/aboutData';
 
 const AboutPage = () => {
-  // Icon mapping
+  // Icon mapping for core values
   const getIcon = (iconName, size = 32) => {
     const icons = {
       book: <BookOpen size={size} />,
@@ -29,356 +30,197 @@ const AboutPage = () => {
     return icons[iconName] || <BookOpen size={size} />;
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-12 md:space-y-20 px-4 md:px-0 pb-16">
       
       {/* Page Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center"
+        className="text-center pt-8"
       >
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring" }}
-          className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center"
+          className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg text-white"
         >
-          <Users className="text-white" size={40} />
+          <Users size={32} />
         </motion.div>
-        
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          {aboutData.headline}
-        </h1>
-        
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-            {aboutData.introText}
-          </p>
-        </div>
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">{aboutData.headline}</h1>
+        <p className="text-gray-600 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">{aboutData.introText}</p>
       </motion.div>
 
       {/* Vision & Mission */}
-      <section className="grid md:grid-cols-2 gap-8">
-        {/* Vision */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3 }}
-          className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 text-white relative overflow-hidden shadow-2xl"
-        >
-          <div className="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-20 -mt-20"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -ml-16 -mb-16"></div>
-          
-          <div className="relative z-10">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-              {getIcon(aboutData.vision.icon, 32)}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {[aboutData.vision, aboutData.mission].map((item, idx) => (
+          <motion.div
+            key={idx}
+            className={`bg-gradient-to-br ${idx === 0 ? 'from-blue-600 to-indigo-700' : 'from-purple-600 to-pink-600'} rounded-2xl p-6 md:p-10 text-white relative overflow-hidden shadow-xl`}
+          >
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
+                {getIcon(item.icon, 24)}
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">{item.title}</h2>
+              <p className="text-lg leading-relaxed text-white/90">{item.statement}</p>
             </div>
-            <h2 className="text-3xl font-bold mb-4">{aboutData.vision.title}</h2>
-            <p className="text-xl leading-relaxed text-white/90">
-              "{aboutData.vision.statement}"
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Mission */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-          className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 text-white relative overflow-hidden shadow-2xl"
-        >
-          <div className="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-20 -mt-20"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -ml-16 -mb-16"></div>
-          
-          <div className="relative z-10">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
-              {getIcon(aboutData.mission.icon, 32)}
-            </div>
-            <h2 className="text-3xl font-bold mb-4">{aboutData.mission.title}</h2>
-            <p className="text-xl leading-relaxed text-white/90">
-              {aboutData.mission.statement}
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        ))}
       </section>
 
       {/* Core Values */}
       <section>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            {aboutData.coreValues.title}
-          </h2>
-          <p className="text-gray-600 text-lg">
-            The principles that guide everything we do
-          </p>
-        </motion.div>
-
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-2">{aboutData.coreValues.title}</h2>
+          <p className="text-gray-500">Our guiding principles</p>
+        </div>
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          className="grid md:grid-cols-5 gap-6"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
         >
           {aboutData.coreValues.values.map((value, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-blue-300 transition-all text-center"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                {getIcon(value.icon, 28)}
-                <span className="text-white text-2xl font-bold"></span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
-                {value.name}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {value.description}
-              </p>
+            <motion.div key={index} variants={itemVariants} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+              <div className="text-blue-600 mb-4 flex justify-center">{getIcon(value.icon, 24)}</div>
+              <h3 className="font-bold text-gray-800 mb-1">{value.name}</h3>
+              <p className="text-xs text-gray-500">{value.description}</p>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
       {/* Leadership Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 md:p-12">
+      <section className="bg-gray-50 rounded-3xl p-6 md:p-16 border border-gray-100">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800">{aboutData.leadership.title}</h2>
+        </div>
+
+        {/* Resident Pastor Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-center mb-12"
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl p-6 md:p-10 shadow-xl mb-12 max-w-5xl mx-auto overflow-hidden border border-gray-100"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            {aboutData.leadership.title}
-          </h2>
-        </motion.div>
-
-        {/* Resident Pastor */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.7 }}
-          className="bg-white rounded-2xl p-8 shadow-xl mb-8 max-w-4xl mx-auto"
-        >
-          <div className="grid md:grid-cols-3 gap-8 items-center">
-            <div className="md:col-span-1">
-              <div className="w-48 h-48 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto flex items-center justify-center overflow-hidden shadow-2xl">
-                {/* Replace with actual image */}
-                <Users className="text-white" size={80} />
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center text-center md:text-left">
+            <div className="relative group flex-shrink-0">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center border-4 border-white shadow-lg">
+                {aboutData.leadership.residentPastor.image ? (
+                  <img 
+                    src={aboutData.leadership.residentPastor.image} 
+                    alt={aboutData.leadership.residentPastor.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <User className="text-gray-300" size={80} />
+                )}
               </div>
             </div>
             
-            <div className="md:col-span-2">
+            <div className="flex-grow">
               <div className="mb-4">
-                <h3 className="text-3xl font-bold text-gray-800 mb-2">
-                  {aboutData.leadership.residentPastor.name}
-                </h3>
-                <p className="text-blue-600 font-semibold text-lg">
-                  {aboutData.leadership.residentPastor.title}
-                </p>
+                <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-1">{aboutData.leadership.residentPastor.name}</h3>
+                <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership.residentPastor.title}</p>
               </div>
-              
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                {aboutData.leadership.residentPastor.description}
-              </p>
-              
-              
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership.residentPastor.description}"</p>
               <a
                 href={`mailto:${aboutData.leadership.residentPastor.email}`}
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 w-full sm:w-auto justify-center"
               >
-                <Mail size={20} />
-                <span>Contact Pastor</span>
+                <Mail size={18} />
+                <span>Message Pastor</span>
               </a>
             </div>
           </div>
         </motion.div>
 
-        {/* Assistant Pastors */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center max-w-3xl mx-auto"
-        >
-          <h3 className="text-2xl font-bold mb-3">
-            {aboutData.leadership.assistantPastors.title}
-          </h3>
-          <p className="text-white/90 text-lg leading-relaxed">
-            {aboutData.leadership.assistantPastors.description}
-          </p>
-        </motion.div>
+        {/* Assistant Pastors Grid */}
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800">{aboutData.leadership.assistantPastors.title}</h3>
+            <p className="text-gray-500 mt-2">{aboutData.leadership.assistantPastors.description}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {aboutData.leadership.assistantPastors.members?.map((pastor, idx) => (
+              <motion.div 
+                key={idx}
+                whileHover={{ y: -5 }}
+                className="bg-white p-5 rounded-2xl shadow-md border border-gray-50 text-center"
+              >
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden bg-blue-50 border-2 border-blue-100">
+                  {pastor.image ? (
+                    <img src={pastor.image} alt={pastor.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-blue-200"><User size={40} /></div>
+                  )}
+                </div>
+                <h4 className="font-bold text-gray-800">{pastor.name}</h4>
+                <p className="text-xs text-blue-600 font-medium uppercase tracking-tighter mt-1">{pastor.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Story & Milestones */}
       <section>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            {aboutData.story.title}
-          </h2>
-        </motion.div>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800">{aboutData.story.title}</h2>
+        </div>
+        <div className="max-w-4xl mx-auto mb-16 relative bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 italic text-center text-gray-700 text-lg md:text-xl">
+          <Quote className="text-blue-100 absolute top-4 left-4" size={40} />
+          {aboutData.story.content}
+        </div>
 
-        {/* Story Content */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1 }}
-          className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-gray-100 mb-12"
-        >
-          <div className="flex items-start space-x-4 mb-6">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <Quote className="text-blue-600" size={24} />
+        <div className="relative max-w-5xl mx-auto space-y-12 md:space-y-0">
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-100 hidden md:block"></div>
+          {aboutData.story.milestones.map((m, i) => (
+            <div key={i} className={`relative flex flex-col md:flex-row items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''} md:mb-16`}>
+              <div className="md:w-1/2 p-4">
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">{m.year}</span>
+                  <h3 className="font-bold text-gray-800 text-lg">{m.title}</h3>
+                  <p className="text-gray-500 text-sm mt-1">{m.description}</p>
+                </div>
+              </div>
+              <div className="hidden md:flex w-8 h-8 bg-white border-4 border-blue-600 rounded-full z-10 items-center justify-center"><TrendingUp size={12} className="text-blue-600" /></div>
+              <div className="md:w-1/2"></div>
             </div>
-            <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-              {aboutData.story.content}
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Milestones Timeline */}
-        <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-600 to-purple-600 hidden md:block"></div>
-          
-          <div className="space-y-12">
-            {aboutData.story.milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.1 + index * 0.1 }}
-                className={`flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex-col gap-8`}
-              >
-                <div className="md:w-1/2 text-center md:text-right">
-                  <div className={`${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="inline-block bg-gradient-to-br from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-bold text-lg mb-3">
-                      {milestone.year}
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="relative flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center shadow-lg z-10">
-                    <TrendingUp className="text-blue-600" size={28} />
-                  </div>
-                </div>
-                
-                <div className="md:w-1/2"></div>
-              </motion.div>
-            ))}
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Statistics */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5 }}
-        className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 md:p-12 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
-        
-        <div className="relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-            Our Impact in Numbers
-          </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {aboutData.stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.6 + index * 0.1, type: "spring" }}
-                className="text-center"
-              >
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-white/90 text-lg font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Stats & CTA */}
+      <section className="bg-gray-900 rounded-3xl p-8 md:p-16 text-white text-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {aboutData.stats.map((s, i) => (
+            <div key={i}><div className="text-4xl md:text-5xl font-black text-blue-500">{s.number}</div><div className="text-xs text-gray-400 font-bold uppercase mt-2 tracking-widest">{s.label}</div></div>
+          ))}
         </div>
-      </motion.section>
+      </section>
 
-      {/* Call to Action */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.8 }}
-        className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-gray-100 text-center"
-      >
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
-          Join Our Growing Family
-        </h2>
-        <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-          Experience the transforming power of God's Word and become part of a community that cares.
-        </p>
+      <section className="text-center p-10 border-2 border-dashed border-gray-200 rounded-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Join Our Growing Family</h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-          >
-            Plan Your Visit
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-lg font-bold text-lg transition-all"
-          >
-            Contact Us
-          </motion.button>
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg">Plan Your Visit</button>
+          <button className="bg-gray-100 text-gray-700 px-8 py-4 rounded-xl font-bold">Contact Us</button>
         </div>
-      </motion.section>
-
+      </section>
     </div>
   );
 };

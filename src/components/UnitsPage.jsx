@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Users, 
-  Heart, 
-  Mail, 
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Users,
+  Heart,
+  Mail,
   Clock,
   ChevronRight,
   X,
   Calendar,
-  MessageCircle
-} from 'lucide-react';
-import unitsData from '../data/unitsData';
+  MessageCircle,
+} from "lucide-react";
+import unitsData from "../data/unitsData";
 
 const openWhatsApp = (number, message) => {
   const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/${number}?text=${encoded}`, '_blank');
+  window.open(`https://wa.me/${number}?text=${encoded}`, "_blank");
 };
 
 const UnitsPage = () => {
@@ -22,32 +22,33 @@ const UnitsPage = () => {
 
   useEffect(() => {
     if (selectedUnit) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [selectedUnit]);
 
   const closeModal = () => setSelectedUnit(null);
 
   const categoryColors = {
-    ministry: 'bg-blue-600',
-    leadership: 'bg-purple-600',
-    operations: 'bg-green-600',
-    creative: 'bg-orange-600'
+    ministry: "bg-blue-600",
+    leadership: "bg-purple-600",
+    operations: "bg-green-600",
+    creative: "bg-orange-600",
   };
 
   const categoryBorders = {
-    ministry: 'border-blue-200 hover:border-blue-400',
-    leadership: 'border-purple-200 hover:border-purple-400',
-    operations: 'border-green-200 hover:border-green-400',
-    creative: 'border-orange-200 hover:border-orange-400'
+    ministry: "border-blue-200 hover:border-blue-400",
+    leadership: "border-purple-200 hover:border-purple-400",
+    operations: "border-green-200 hover:border-green-400",
+    creative: "border-orange-200 hover:border-orange-400",
   };
 
   return (
     <div className="space-y-10 md:space-y-16 px-4 md:px-0">
-      
       {/* Page Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -62,11 +63,11 @@ const UnitsPage = () => {
         >
           <Heart className="text-white" size={30} />
         </motion.div>
-        
+
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 px-2">
           {unitsData.headline}
         </h1>
-        
+
         <p className="text-gray-600 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
           {unitsData.introText}
         </p>
@@ -85,7 +86,9 @@ const UnitsPage = () => {
               className={`bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all border-2 ${categoryBorders[unit.category]}`}
               onClick={() => setSelectedUnit(unit)}
             >
-              <div className={`${categoryColors[unit.category]} p-5 md:p-6 text-white relative overflow-hidden`}>
+              <div
+                className={`${categoryColors[unit.category]} p-5 md:p-6 text-white relative overflow-hidden`}
+              >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white opacity-10 rounded-full -mr-12 -mt-12"></div>
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-3">
@@ -112,7 +115,10 @@ const UnitsPage = () => {
 
                 <button className="w-full bg-gray-50 hover:bg-gray-100 text-gray-800 py-3 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 group border border-gray-100">
                   <span>View Details</span>
-                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </button>
               </div>
             </motion.div>
@@ -121,9 +127,7 @@ const UnitsPage = () => {
       </section>
 
       {/* Closing Note Section */}
-      <motion.section
-        className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden"
-      >
+      <motion.section className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden">
         <div className="relative z-10">
           <Heart className="mx-auto mb-6 opacity-80" size={40} />
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
@@ -138,8 +142,8 @@ const UnitsPage = () => {
                 key={index}
                 className={`${
                   index === 0
-                    ? 'bg-white text-blue-600'
-                    : 'bg-transparent border-2 border-white text-white'
+                    ? "bg-white text-blue-600"
+                    : "bg-transparent border-2 border-white text-white"
                 } px-8 py-4 rounded-xl font-bold shadow-lg w-full sm:w-auto transition-transform active:scale-95`}
               >
                 {button.text}
@@ -169,7 +173,9 @@ const UnitsPage = () => {
               className="relative bg-white w-full h-[90vh] md:h-auto md:max-h-[90vh] md:max-w-4xl overflow-y-auto rounded-t-[2.5rem] md:rounded-2xl shadow-2xl"
             >
               {/* Modal Sticky Header (Mobile Optimization) */}
-              <div className={`${categoryColors[selectedUnit.category]} p-6 md:p-8 text-white relative sticky top-0 z-20`}>
+              <div
+                className={`${categoryColors[selectedUnit.category]} p-6 md:p-8 text-white relative sticky top-0 z-20`}
+              >
                 <button
                   onClick={closeModal}
                   className="absolute top-4 right-4 w-10 h-10 bg-black/20 hover:bg-black/40 rounded-full flex items-center justify-center transition-colors z-30"
@@ -183,7 +189,9 @@ const UnitsPage = () => {
                       {selectedUnit.category}
                     </span>
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-bold pr-10">{selectedUnit.name}</h2>
+                  <h2 className="text-2xl md:text-4xl font-bold pr-10">
+                    {selectedUnit.name}
+                  </h2>
                 </div>
               </div>
 
@@ -205,7 +213,9 @@ const UnitsPage = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">About This Unit</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    About This Unit
+                  </h3>
                   <p className="text-gray-600 leading-relaxed text-base">
                     {selectedUnit.fullDesc}
                   </p>
@@ -213,21 +223,43 @@ const UnitsPage = () => {
 
                 {/* Leadership Team - Responsive Grid */}
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-6">Unit Leadership</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-6">
+                    Unit Leadership
+                  </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {/* Simplified Member Card Helper */}
-                    {[selectedUnit.leadership.leader, selectedUnit.leadership.assistant, selectedUnit.leadership.secretary].map((member, i) => (
-                      <div key={i} className="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100">
+                    {[
+                      selectedUnit.leadership.leader,
+                      selectedUnit.leadership.assistant,
+                      selectedUnit.leadership.secretary,
+                    ].map((member, i) => (
+                      <div
+                        key={i}
+                        className="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100"
+                      >
                         <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
                           {member.image ? (
-                            <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="w-full h-full object-cover object-top"
+                            />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-300"><Users className="text-white" /></div>
+                            <div className="w-full h-full flex items-center justify-center bg-gray-300">
+                              <Users className="text-white" />
+                            </div>
                           )}
                         </div>
-                        <h4 className="font-bold text-gray-800 text-sm">{member.name}</h4>
-                        <p className="text-xs text-blue-600 font-medium mb-2">{member.title}</p>
-                        <a href={`mailto:${member.contact}`} className="text-xs text-gray-500 flex items-center justify-center gap-1">
+                        <h4 className="font-bold text-gray-800 text-sm">
+                          {member.name}
+                        </h4>
+                        <p className="text-xs text-blue-600 font-medium mb-2">
+                          {member.title}
+                        </p>
+                        <a
+                          href={`mailto:${member.contact}`}
+                          className="text-xs text-gray-500 flex items-center justify-center gap-1"
+                        >
                           <Mail size={12} /> Contact
                         </a>
                       </div>
@@ -238,10 +270,15 @@ const UnitsPage = () => {
                 {/* Requirements */}
                 {selectedUnit.requirements && (
                   <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100">
-                    <h3 className="text-lg font-bold text-blue-900 mb-4">Requirements to Join</h3>
+                    <h3 className="text-lg font-bold text-blue-900 mb-4">
+                      Requirements to Join
+                    </h3>
                     <ul className="space-y-3">
                       {selectedUnit.requirements.map((req, index) => (
-                        <li key={index} className="flex items-start space-x-3 text-sm text-gray-700">
+                        <li
+                          key={index}
+                          className="flex items-start space-x-3 text-sm text-gray-700"
+                        >
                           <div className="w-5 h-5 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold">
                             {index + 1}
                           </div>
