@@ -13,7 +13,9 @@
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.546.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.14.0",
+    "router-dom": "^3.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

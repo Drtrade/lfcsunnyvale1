@@ -1,5 +1,6 @@
 // About Page Data - Centralized content management
 import asstResPastor from '../assets/pastors/AsstRestPastor.jpg';
+import resPastor from '../assets/pastors/ResPastor.jpeg';
 
 export const aboutData = {
   headline: "Who We Are",
@@ -52,18 +53,18 @@ export const aboutData = {
   leadership: {
     title: "Our Leadership",
     residentPastor: {
-      name: "Pastor Bola Vaughan", // UPDATE THIS with actual pastor name
+      name: "Pastor Bola Vaughan",
       title: "Resident Pastor",
       description: "A dynamic preacher of the Word with a passion for transforming lives through biblical revelation and the power of faith.",
-      image: "/images/pastor-main.jpg", // Add actual image path
-      email: "pastor@lfcsunnyvale.org"
+      image: resPastor, 
+      email: "livingfaithchurchsunnyvale@gmail.com"
     },
     assistantPastor: {
-      name: "Pastor Gabriel ", // UPDATE THIS with actual pastor name
+      name: "Pastor Gabriel Emmanuel ", // UPDATE THIS with actual pastor name
       title: "Assistant Resident Pastor",
       description: "A dynamic preacher of the Word with a passion for transforming lives through biblical revelation and the power of faith.",
       image: asstResPastor, // Add actual image path
-      email: "pastor@lfcsunnyvale.org"
+      email: "livingfaithchurchsunnyvale@gmail.com"
     },
    
   },

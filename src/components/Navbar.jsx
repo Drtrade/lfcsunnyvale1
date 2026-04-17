@@ -1,24 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Home,
-  Calendar,
-  Users,
-  Info,
-  Mail,
-  BookOpen,
-  Search,
-  Bell,
-  Menu,
-  X,
-  Clock,
+  Home, Calendar, Users, Info, Mail, Search, Bell, Menu, X, Clock,
 } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 
 const Navbar = () => {
   const {
-    currentPage,
-    setCurrentPage,
     showMobileMenu,
     setShowMobileMenu,
     currentTime,
@@ -27,16 +16,21 @@ const Navbar = () => {
     setNotificationEnabled,
   } = useApp();
 
+  const location = useLocation();
   const [showSearch, setShowSearch] = useState(false);
 
   const navItems = [
-    { id: "home", label: "Home", icon: Home },
-    { id: "services", label: "Services", icon: Calendar },
-    { id: "units", label: "Units", icon: Users },
-    { id: "about", label: "About", icon: Info },
-    { id: "contact", label: "Contact", icon: Mail },
-    // { id: "blog", label: "Blog", icon: BookOpen },
+    { path: "/",        label: "Home",     icon: Home     },
+    { path: "/services",label: "Services", icon: Calendar },
+    { path: "/units",   label: "Units",    icon: Users    },
+    { path: "/about",   label: "About",    icon: Info     },
+    { path: "/contact", label: "Contact",  icon: Mail     },
   ];
+
+  const isActive = (path) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
 
   const formatDateTime = (date) => {
     return date.toLocaleString("en-US", {
@@ -54,79 +48,77 @@ const Navbar = () => {
     alert("Push notification enabled! You'll receive service reminders");
   };
 
+  const activeClass = "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-sm";
+  const inactiveClass = "text-gray-700 hover:bg-gray-100";
+
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-3 md:py-4">
-          
-          {/* Logo Section - Clickable to Home */}
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            onClick={() => setCurrentPage("home")}
-            className="flex items-center space-x-2 md:space-x-3 cursor-pointer group"
-          >
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:shadow-md transition-shadow">
-              <span className="text-white font-bold text-lg md:text-xl">LFC</span>
-            </div>
-            {/* Hidden on very small screens to save space, visible on iPhone 6s and up */}
-            <div className="flex flex-col">
-              <h1 className="text-base md:text-xl font-bold text-gray-800 leading-none">LFC Sunnyvale</h1>
-              <p className="text-[10px] md:text-xs text-gray-500">Living Faith Church</p>
-            </div>
+
+          {/* Logo — Link to Home */}
+          <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
+            <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:shadow-md transition-shadow">
+                <span className="text-white font-bold text-lg md:text-xl">LFC</span>
+              </div>
+              <div className="flex flex-col">
+                <h1 className="text-base md:text-xl font-bold text-gray-800 leading-none">LFC Sunnyvale</h1>
+                <p className="text-[10px] md:text-xs text-gray-500">Living Faith Church</p>
+              </div>
+            </Link>
           </motion.div>
 
-          {/* Desktop Navigation (lg and up) */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => (
-              <motion.button
-                key={item.id}
+              <motion.div
+                key={item.path}
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => setCurrentPage(item.id)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all flex items-center space-x-2 ${
-                  currentPage === item.id
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-sm"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
               >
-                <item.icon size={18} />
-                <span>{item.label}</span>
-              </motion.button>
+                <Link
+                  to={item.path}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all flex items-center space-x-2 ${
+                    isActive(item.path) ? activeClass : inactiveClass
+                  }`}
+                >
+                  <item.icon size={18} />
+                  <span>{item.label}</span>
+                </Link>
+              </motion.div>
             ))}
           </div>
 
           {/* Right Side Icons */}
           <div className="flex items-center space-x-1 md:space-x-4">
-            {/* Date & Time Display (Desktop Only) */}
+            {/* Date & Time (Desktop Only) */}
             <div className="hidden xl:flex items-center space-x-2 text-sm text-gray-600 bg-gray-100 px-3 py-2 rounded-lg">
               <Clock size={16} />
               <span className="font-medium">{formatDateTime(currentTime)}</span>
             </div>
 
-            {/* Search Icon */}
+            {/* Search */}
             <button
               onClick={() => setShowSearch(!showSearch)}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
               aria-label="Search"
             >
-              <Search size={20} className="text-gray-700 md:w-5 md:h-5 w-5 h-5" />
+              <Search size={20} className="text-gray-700" />
             </button>
 
             {/* Notification Bell */}
             <button
               onClick={enableNotifications}
               className={`p-2 rounded-lg transition-colors ${
-                notificationEnabled
-                  ? "bg-blue-100 text-blue-600"
-                  : "hover:bg-gray-100 text-gray-700"
+                notificationEnabled ? "bg-blue-100 text-blue-600" : "hover:bg-gray-100 text-gray-700"
               }`}
             >
-              <Bell size={20} className="md:w-5 md:h-5 w-5 h-5" />
+              <Bell size={20} />
             </button>
 
-            {/* Mobile Menu Button (Below lg) */}
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
               className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors ml-1"
@@ -136,7 +128,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search Bar (Animated) */}
+        {/* Search Bar */}
         <AnimatePresence>
           {showSearch && (
             <motion.div
@@ -157,7 +149,7 @@ const Navbar = () => {
         </AnimatePresence>
       </div>
 
-      {/* Mobile Menu (Animated) */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {showMobileMenu && (
           <motion.div
@@ -168,29 +160,23 @@ const Navbar = () => {
           >
             <div className="px-4 py-3 space-y-1">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setCurrentPage(item.id);
-                    setShowMobileMenu(false);
-                  }}
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setShowMobileMenu(false)}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${
-                    currentPage === item.id
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
-                      : "text-gray-700 hover:bg-gray-50 active:bg-gray-100"
+                    isActive(item.path) ? activeClass : "text-gray-700 hover:bg-gray-50 active:bg-gray-100"
                   }`}
                 >
                   <item.icon size={20} />
                   <span className="font-medium text-base">{item.label}</span>
-                </button>
+                </Link>
               ))}
 
-              {/* Mobile Date/Time - Visible when menu is open */}
+              {/* Mobile Date/Time */}
               <div className="flex items-center space-x-2 text-xs text-gray-500 bg-gray-50 px-4 py-3 rounded-lg mt-3 border border-gray-100">
                 <Clock size={14} />
-                <span className="font-medium">
-                  {formatDateTime(currentTime)}
-                </span>
+                <span className="font-medium">{formatDateTime(currentTime)}</span>
               </div>
             </div>
           </motion.div>

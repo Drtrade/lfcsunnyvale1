@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { 
   BookOpen, 
   Heart, 
@@ -40,6 +41,7 @@ const AboutPage = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
+  const navigate = useNavigate();
   return (
     <div className="space-y-12 md:space-y-20 px-4 md:px-0 pb-16">
       
@@ -233,7 +235,7 @@ const AboutPage = () => {
       <section className="text-center p-10 border-2 border-dashed border-gray-200 rounded-3xl">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Join Our Growing Family</h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg">Plan Your Visit</button>
+          <button onClick={() => navigate('/services')} className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg">Plan Your Visit</button>
         </div>
       </section>
     </div>

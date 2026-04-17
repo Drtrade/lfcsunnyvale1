@@ -3,6 +3,7 @@ export const servicesData = {
   introText:
     "At Living Faith Church Sunnyvale, we believe that every service is an opportunity to meet with God and receive fresh grace for victorious living. Our services are filled with atmospheric shift worship that bring down the glory of God, deep teachings, and divine manifestations of God's power.",
 
+  location: "Living Faith Church, Sunnyvale Estate, Dakwo, Abuja",
   // Weekly Services
   weeklyServices: [
     {
@@ -15,13 +16,14 @@ export const servicesData = {
       ],
 
       // UPDATE THIS MONTHLY - Change the theme for the next Sunday service
-      currentTheme: "Pre-Shiloh Encounter Service", // <-- Update this every week
+      currentTheme: "", // <-- Update this every week
       description:
         "Join us for our Sunday services, where we gather to worship God and receive His word. Each service is designed to uplift your spirit and empower you for the week ahead.",
       color: "from-red-400 to-blue-500",
       icon: "celebration",
       isRecurring: true,
     },
+
     {
       id: "wednesday",
       day: "Wednesday",

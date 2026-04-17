@@ -121,7 +121,7 @@ const ServicesPage = () => {
 
                   <div className="flex items-start space-x-2 text-gray-500 pt-2 border-t border-gray-50">
                     <MapPin size={16} className="text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs md:text-sm leading-snug">Living Faith Church, 123 Faith Avenue, Sunnyvale, CA</span>
+                    <span className="text-xs md:text-sm leading-snug">{servicesData.location}</span>
                   </div>
                 </div>
               </div>
