@@ -83,6 +83,7 @@ const Footer = () => {
           </div>
 
           {/* Connect Column */}
+          {/* Column 3: Social Media (FIXED EXTERNAL LINKS) */}
           <div className="flex flex-col">
             <h4 className="font-bold text-white text-base mb-5 pb-2 border-b border-gray-800 inline-block self-start">
               Connect With Us
@@ -93,33 +94,40 @@ const Footer = () => {
                   Icon: Facebook,
                   color: "bg-blue-600",
                   hover: "hover:bg-blue-700",
+                  url: "https://www.facebook.com/share/1aPUHvRmD9/?mibextid=wwXIfr",
                 },
-                {
-                  Icon: Instagram,
-                  color:
-                    "bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600",
-                  hover: "opacity-90 hover:opacity-100",
-                },
-                {
-                  Icon: Youtube,
-                  color: "bg-red-600",
-                  hover: "hover:bg-red-700",
-                },
+                // {
+                //   Icon: Instagram,
+                //   color:
+                //     "bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600",
+                //   hover: "opacity-90 hover:opacity-100",
+                //   url: "https://instagram.com/lfcsunnyvale",
+                // },
+                // {
+                //   Icon: Youtube,
+                //   color: "bg-red-600",
+                //   hover: "hover:bg-red-700",
+                //   url: "https://youtube.com/@lfcsunnyvale",
+                // },
               ].map((social, i) => (
-                <button
+                <a
                   key={i}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-10 h-10 ${social.color} ${social.hover} rounded-xl flex items-center justify-center transition-all transform hover:-translate-y-1 shadow-md`}
                 >
                   <social.Icon size={18} className="text-white" />
-                </button>
+                </a>
               ))}
             </div>
+
             <a
-              href="mailto:info@lfcsunnyvale.org"
-              className="text-gray-400 text-sm hover:text-white transition-colors flex items-center group"
+              href="mailto:livingfaithchurchsunnyvale@gmail.com"
+              className="text-gray-400 text-sm hover:text-white transition-colors flex items-center group break-all"
             >
               <Mail
-                className="mr-2 text-blue-500 group-hover:scale-110 transition-transform"
+                className="mr-2 text-blue-500 group-hover:scale-110 transition-transform flex-shrink-0"
                 size={16}
               />
               livingfaithchurchsunnyvale@gmail.com
