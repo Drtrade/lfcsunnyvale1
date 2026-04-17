@@ -11,7 +11,7 @@ export const contactData = {
       full: "Living Faith Church, Sunnyvale Estate, Dakwo, Abuja, Nigeria"
     },
     phone: "+234 [Insert Church Number]", // UPDATE with actual number
-    email: "info@lfcsunnyvale.org",
+    email: "livingfaithchurchsunnyvale@gmail.com",
     serviceHours: [
       { day: "Sundays", time: "7:00 AM & 9:00 AM" },
       { day: "Wednesdays", time: "6:00 PM" }
@@ -19,7 +19,7 @@ export const contactData = {
   },
 
   socialMedia: {
-    facebook: "https://facebook.com/lfcsunnyvale", // UPDATE with actual URLs
+    facebook: "https://www.facebook.com/share/1aPUHvRmD9/?mibextid=wwXIfr", // UPDATE with actual URLs
     instagram: "https://instagram.com/lfcsunnyvale",
     youtube: "https://youtube.com/@lfcsunnyvale",
     twitter: "https://twitter.com/lfcsunnyvale"

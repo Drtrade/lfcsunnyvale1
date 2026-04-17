@@ -55,7 +55,7 @@ export const aboutData = {
     residentPastor: {
       name: "Pastor Bola Vaughan",
       title: "Resident Pastor",
-      description: "A dynamic preacher of the Word with a passion for transforming lives through biblical revelation and the power of faith.",
+      description: " Pastor Bola Vaugha is a devoted clergyman with a strong passion for ministry and a deep commitment to impacting lives through the preaching of the Gospel. He currently serves as the Resident Pastor of Living Faith Church, Sunnyvale, Abuja, where he provides spiritual leadership, guidance, and mentorship to members of the congregation.",
       image: resPastor, 
       email: "livingfaithchurchsunnyvale@gmail.com"
     },
@@ -89,7 +89,7 @@ export const aboutData = {
         description: "Reached a milestone of over 500 active members"
       },
       {
-        year: "2025",
+        year: "2026",
         title: "Continued Growth",
         description: "Impacting thousands through various ministries"
       }

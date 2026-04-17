@@ -49,10 +49,10 @@ const homeData = {
       "Living Faith Church Sunnyvale is a vibrant community of believers committed to spreading the gospel of Jesus Christ and transforming lives through faith, love, and service.",
     buttonText: "Learn More About Us",
     stats: [
-      { val: "15+",  label: "Years",      color: "text-blue-600"   },
-      { val: "2000+",label: "Members",    color: "text-purple-600" },
-      { val: "50+",  label: "Ministries", color: "text-green-600"  },
-      { val: "100+", label: "Programs",   color: "text-orange-600" },
+      { val: "10+",  label: "Years",      color: "text-blue-600"   },
+      { val: "3000+",label: "Members",    color: "text-purple-600" },
+      { val: "15+",  label: "Units", color: "text-green-600"  },
+      { val: "5+", label: "Weekly Programs",   color: "text-orange-600" },
     ],
   },
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { 
   Calendar, 
   Clock, 
@@ -15,7 +16,9 @@ import {
 } from 'lucide-react';
 import servicesData, { getNextFastingStartDate } from '../data/servicesData';
 
+
 const ServicesPage = () => {
+  const navigate = useNavigate();
   const nextFastingDate = getNextFastingStartDate();
 
   const getIcon = (iconName, size = 32) => {
@@ -29,6 +32,18 @@ const ServicesPage = () => {
       renewal: <Sparkles size={size} />
     };
     return icons[iconName] || <Calendar size={size} />;
+  };
+
+
+
+  // ✅ Get Directions — navigates to contact page and scrolls to the map section
+  const handleGetDirections = () => {
+    navigate('/contact#map');
+    // Small delay to allow page to load before scrolling
+    setTimeout(() => {
+      const mapSection = document.getElementById('map');
+      if (mapSection) mapSection.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
   };
 
   return (
@@ -217,10 +232,10 @@ const ServicesPage = () => {
                   </ul>
                 )}
 
-                <button className={`w-full bg-gradient-to-r ${program.color} text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all flex items-center justify-center space-x-2 text-sm`}>
+                {/* <button className={`w-full bg-gradient-to-r ${program.color} text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all flex items-center justify-center space-x-2 text-sm`}>
                   <span>Learn More</span>
                   <ArrowRight size={16} />
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ))}
@@ -239,14 +254,14 @@ const ServicesPage = () => {
             Join us for any of our services and experience the life-transforming power of God's Word.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center space-x-2 text-sm md:text-base">
+            <button onClick={handleGetDirections} className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition-all shadow-lg flex items-center justify-center space-x-2 text-sm md:text-base"  >
               <MapPin size={18} />
               <span>Get Directions</span>
             </button>
-            <button className="bg-white/10 border-2 border-white/50 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center space-x-2 text-sm md:text-base">
+            {/* <button onClick={handleAddToCalendar} className="bg-white/10 border-2 border-white/50 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center space-x-2 text-sm md:text-base">
               <Calendar size={18} />
               <span>Plan Your Visit</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </motion.section>

@@ -4,10 +4,11 @@ import { Calendar, Clock, MapPin, ArrowRight, Users, Heart, Quote } from 'lucide
 import { useNavigate } from 'react-router-dom';
 import homeData from '../data/homeData';
 
+ 
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const getUpcomingService = () => {
+ const getUpcomingService = () => {
     const now = new Date();
     const day = now.getDay();
     const hour = now.getHours();
@@ -17,85 +18,28 @@ const HomePage = () => {
     const isFirstWeek = date <= 7;
 
     if (day >= 1 && day <= 5 && currentTime < 420) {
-      return {
-        title: "Covenant Hour of Prayer (CHOP)",
-        time: "6:00 AM - 7:00 AM",
-        day: "Today",
-        description: "Start your day with powerful intercession and divine connection",
-        type: "prayer",
-      };
+      return { title: "Covenant Hour of Prayer (CHOP)", time: "6:00 AM - 7:00 AM", day: "Today", description: "Start your day with powerful intercession and divine connection", type: "prayer" };
     }
     if (day === 6 && currentTime < 480) {
-      return {
-        title: "Covenant Hour of Prayer (CHOP)",
-        time: "7:00 AM - 8:00 AM",
-        day: "Today",
-        description: "Start your day with powerful intercession and divine connection",
-        type: "prayer",
-      };
+      return { title: "Covenant Hour of Prayer (CHOP)", time: "7:00 AM - 8:00 AM", day: "Today", description: "Start your day with powerful intercession and divine connection", type: "prayer" };
     }
     if (day === 0) {
-      if (currentTime < 540) {
-        return {
-          title: "Sunday Celebration Service - First Service",
-          time: "7:00 AM - 9:00 AM",
-          day: "Today",
-          description: "Join us for powerful worship, inspiring messages, and divine encounters",
-          type: "celebration",
-        };
-      } else if (currentTime < 660) {
-        return {
-          title: "Sunday Celebration Service - Second Service",
-          time: "9:00 AM - 11:00 AM",
-          day: "Today",
-          description: "Join us for powerful worship, inspiring messages, and divine encounters",
-          type: "celebration",
-        };
-      } else {
-        return {
-          title: "Sunday Celebration Service",
-          time: "7:00 AM - 9:00 AM or 9:00 AM - 11:00 AM",
-          day: "Next Sunday",
-          description: "Join us for powerful worship, inspiring messages, and divine encounters",
-          type: "celebration",
-        };
-      }
+      if (currentTime < 540) return { title: "Sunday Celebration Service - First Service", time: "7:00 AM - 9:00 AM", day: "Today", description: "Join us for powerful worship, inspiring messages, and divine encounters", type: "celebration" };
+      else if (currentTime < 660) return { title: "Sunday Celebration Service - Second Service", time: "9:00 AM - 11:00 AM", day: "Today", description: "Join us for powerful worship, inspiring messages, and divine encounters", type: "celebration" };
+      else return { title: "Sunday Celebration Service", time: "7:00 AM - 9:00 AM or 9:00 AM - 11:00 AM", day: "Next Sunday", description: "Join us for powerful worship, inspiring messages, and divine encounters", type: "celebration" };
     }
     if (isFirstWeek && day >= 3 && day <= 5 && currentTime < 1140) {
-      return {
-        title: "Spiritual Week of Emphases",
-        time: "5:30 PM - 7:00 PM",
-        day: day === 3 ? "Today (Wednesday)" : day === 4 ? "Today (Thursday)" : "Today (Friday)",
-        description: "A special week of spiritual renewal, teaching, and breakthrough",
-        type: "special",
-      };
+      return { title: "Spiritual Week of Emphases", time: "5:30 PM - 7:00 PM", day: day === 3 ? "Today (Wednesday)" : day === 4 ? "Today (Thursday)" : "Today (Friday)", description: "A special week of spiritual renewal, teaching, and breakthrough", type: "special" };
     }
     if (day === 3 && currentTime < 1140 && !isFirstWeek) {
-      return {
-        title: "Midweek Communion Service",
-        time: "5:30 PM - 7:00 PM",
-        day: "Today (Wednesday)",
-        description: "Experience the transforming power of communion and the Word",
-        type: "communion",
-      };
+      return { title: "Midweek Communion Service", time: "5:30 PM - 7:00 PM", day: "Today (Wednesday)", description: "Experience the transforming power of communion and the Word", type: "communion" };
     }
     if ((day === 0 && currentTime >= 660) || day === 1 || day === 2) {
-      return {
-        title: "Midweek Communion Service",
-        time: "5:30 PM - 7:00 PM",
-        day: "Wednesday",
-        description: "Experience the transforming power of communion and the Word",
-        type: "communion",
-      };
+      return { title: "Midweek Communion Service", time: "5:30 PM - 7:00 PM", day: "Wednesday", description: "Experience the transforming power of communion and the Word", type: "communion" };
     }
-    return {
-      title: "Sunday Celebration Service",
-      time: "7:00 AM - 9:00 AM or 9:00 AM - 11:00 AM",
-      day: "This Sunday",
-      description: "Join us for powerful worship, inspiring messages, and divine encounters",
-      type: "celebration",
-    };
+    return { title: "Covenant Day of Vengeance ", time: "7:00 AM - 9:00 AM or 9:00 AM - 11:00 AM", day: "This Sunday", description: "Join us for powerful worship, inspiring messages, and divine encounters", type: "celebration" };
   };
+  
 
   const upcomingService = getUpcomingService();
 
@@ -109,20 +53,81 @@ const HomePage = () => {
     }
   };
 
+  // ✅ Add to Calendar — builds a Google Calendar URL with the current event details
+  const handleAddToCalendar = () => {
+    const now = new Date();
+
+    // Parse start time from service time string (e.g. "6:00 AM - 7:00 AM")
+    const parseServiceTime = (timeStr, baseDate) => {
+      const startStr = timeStr.split(' - ')[0].trim(); // "6:00 AM"
+      const [time, meridiem] = startStr.split(' ');
+      let [hours, minutes] = time.split(':').map(Number);
+      if (meridiem === 'PM' && hours !== 12) hours += 12;
+      if (meridiem === 'AM' && hours === 12) hours = 0;
+      const date = new Date(baseDate);
+      date.setHours(hours, minutes, 0, 0);
+      return date;
+    };
+
+    const parseEndTime = (timeStr, baseDate) => {
+      const parts = timeStr.split(' - ');
+      // If there's no clear end (e.g. "or" in time), default to 2 hours after start
+      if (parts.length < 2 || timeStr.includes('or')) {
+        const start = parseServiceTime(timeStr, baseDate);
+        return new Date(start.getTime() + 2 * 60 * 60 * 1000);
+      }
+      const endStr = parts[1].trim();
+      const [time, meridiem] = endStr.split(' ');
+      let [hours, minutes] = time.split(':').map(Number);
+      if (meridiem === 'PM' && hours !== 12) hours += 12;
+      if (meridiem === 'AM' && hours === 12) hours = 0;
+      const date = new Date(baseDate);
+      date.setHours(hours, minutes, 0, 0);
+      return date;
+    };
+
+    const formatGoogleDate = (date) =>
+      date.toISOString().replace(/-|:|\.\d\d\d/g, '');
+
+    const startDate = parseServiceTime(upcomingService.time, now);
+    const endDate = parseEndTime(upcomingService.time, now);
+
+    const params = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: upcomingService.title,
+      dates: `${formatGoogleDate(startDate)}/${formatGoogleDate(endDate)}`,
+      details: upcomingService.description,
+      location: homeData.location,
+    });
+
+    window.open(`https://calendar.google.com/calendar/render?${params.toString()}`, '_blank');
+  };
+
+  // ✅ Get Directions — navigates to contact page and scrolls to the map section
+  const handleGetDirections = () => {
+    navigate('/contact#map');
+    // Small delay to allow page to load before scrolling
+    setTimeout(() => {
+      const mapSection = document.getElementById('map');
+      if (mapSection) mapSection.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  };
+
   return (
     <div className="space-y-10 md:space-y-16 px-4">
 
-       {/* Hero Section - Updated with Altar Image Background */}
+      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="relative min-h-[500px] md:h-[600px] rounded-2xl overflow-hidden flex items-center justify-center bg-gray-900"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(${homeData.hero.backgroundImage})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url(${homeData.hero.backgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="relative z-10 flex flex-col items-center justify-center text-white px-4 text-center max-w-4xl mx-auto py-12">
           <motion.h1
             initial={{ scale: 0.9, opacity: 0 }}
@@ -203,12 +208,22 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
+
               <div className="flex flex-col space-y-3 w-full md:w-auto">
-                <button className="bg-white text-gray-800 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all shadow-lg flex items-center justify-center space-x-2">
+                {/* ✅ Functional Add to Calendar button */}
+                <button
+                  onClick={handleAddToCalendar}
+                  className="bg-white text-gray-800 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all shadow-lg flex items-center justify-center space-x-2"
+                >
                   <Calendar size={20} />
                   <span>Add to Calendar</span>
                 </button>
-                <button className="bg-white/20 border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/30 transition-all flex items-center justify-center space-x-2">
+
+                {/* ✅ Get Directions navigates to contact page map section */}
+                <button
+                  onClick={handleGetDirections}
+                  className="bg-white/20 border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/30 transition-all flex items-center justify-center space-x-2"
+                >
                   <span>Get Directions</span>
                   <ArrowRight size={20} />
                 </button>
@@ -217,17 +232,17 @@ const HomePage = () => {
           </div>
         </motion.div>
 
-        {/* Weekly Services Grid */}
+        {/* ✅ Weekly Services Grid — centered icons and titles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {homeData.weeklyServices.map((service, i) => (
-            <div key={i} className={`bg-white p-6 rounded-xl shadow-lg border-2 ${service.colorBorder}`}>
+            <div key={i} className={`bg-white p-6 rounded-xl shadow-lg border-2 ${service.colorBorder} flex flex-col items-center text-center`}>
               <div className={`w-12 h-12 ${service.colorBg} rounded-full flex items-center justify-center mb-4`}>
                 <Calendar className={service.colorIcon} size={24} />
               </div>
               <h4 className="text-xl font-bold text-gray-800 mb-2">{service.title}</h4>
               <div className="space-y-2 text-sm text-gray-700">
                 {service.times.map((time, j) => (
-                  <p key={j} className="flex items-center">
+                  <p key={j} className="flex items-center justify-center">
                     <Clock size={14} className={`mr-2 ${service.colorIcon}`} />
                     {time}
                   </p>
@@ -238,13 +253,14 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* ✅ About Section — icon properly circled */}
       <section>
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                {/* ✅ Fixed: proper rounded-full circle with flex centering */}
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
                   <Users className="text-white" size={28} />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800">{homeData.about.title}</h2>
@@ -272,7 +288,7 @@ const HomePage = () => {
 
       {/* Mandate & What to Expect */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-6 md:p-10 text-white shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-6 md:p-10 text-white shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2">
             <Quote size={24} /> Our Mandate
           </h3>

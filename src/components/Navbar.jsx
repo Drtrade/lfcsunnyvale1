@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context/AppContext";
+import logo from "../assets/logo/lfcLogo.jpg";
 
 const Navbar = () => {
   const {
@@ -44,7 +45,7 @@ const Navbar = () => {
   };
 
   const enableNotifications = () => {
-    setNotificationEnabled(true);
+    setNotificationEnabled(false);
     alert("Push notification enabled! You'll receive service reminders");
   };
 
@@ -60,11 +61,13 @@ const Navbar = () => {
           <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
             <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
               <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:shadow-md transition-shadow">
-                <span className="text-white font-bold text-lg md:text-xl">LFC</span>
+                <span className="text-white font-bold text-lg md:text-xl">
+                  <img src={logo} alt="logo" />
+                </span>
               </div>
               <div className="flex flex-col">
                 <h1 className="text-base md:text-xl font-bold text-gray-800 leading-none">LFC Sunnyvale</h1>
-                <p className="text-[10px] md:text-xs text-gray-500">Living Faith Church</p>
+                <p className="text-[10px] md:text-xs text-gray-500">Living Faith Church Branch</p>
               </div>
             </Link>
           </motion.div>
@@ -99,24 +102,24 @@ const Navbar = () => {
               <span className="font-medium">{formatDateTime(currentTime)}</span>
             </div>
 
-            {/* Search */}
-            <button
+            {/* Search is to be implemented when we add backend support */}
+            {/* <button
               onClick={() => setShowSearch(!showSearch)}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
               aria-label="Search"
             >
               <Search size={20} className="text-gray-700" />
-            </button>
+            </button> */}
 
-            {/* Notification Bell */}
-            <button
+            {/* Notification Bell is to be implemented when we add backend support  */}
+            {/* <button
               onClick={enableNotifications}
               className={`p-2 rounded-lg transition-colors ${
                 notificationEnabled ? "bg-blue-100 text-blue-600" : "hover:bg-gray-100 text-gray-700"
               }`}
             >
               <Bell size={20} />
-            </button>
+            </button> */}
 
             {/* Mobile Menu Toggle */}
             <button
@@ -128,8 +131,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search Bar */}
-        <AnimatePresence>
+        {/* Search Bar is to be implemented when we add backend support  */}
+        {/* <AnimatePresence>
           {showSearch && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
@@ -146,7 +149,7 @@ const Navbar = () => {
               />
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
 
       {/* Mobile Menu */}

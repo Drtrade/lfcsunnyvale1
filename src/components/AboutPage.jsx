@@ -139,13 +139,13 @@ const AboutPage = () => {
                 <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership.residentPastor.title}</p>
               </div>
               <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership.residentPastor.description}"</p>
-              <a
+              {/* <a
                 href={`mailto:${aboutData.leadership.residentPastor.email}`}
                 className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 w-full sm:w-auto justify-center"
               >
                 <Mail size={18} />
                 <span>Message Pastor</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </motion.div>
@@ -180,13 +180,13 @@ const AboutPage = () => {
                 <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership. assistantPastor.title}</p>
               </div>
               <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership. assistantPastor.description}"</p>
-              <a
+              {/* <a
                 href={`mailto:${aboutData.leadership. assistantPastor.email}`}
                 className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 w-full sm:w-auto justify-center"
               >
                 <Mail size={18} />
                 <span>Message Pastor</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </motion.div>

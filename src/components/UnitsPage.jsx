@@ -136,7 +136,7 @@ const UnitsPage = () => {
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-snug">
             {unitsData.closingNote.description}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {unitsData.closingNote.cta.map((button, index) => (
               <button
                 key={index}
@@ -149,7 +149,7 @@ const UnitsPage = () => {
                 {button.text}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </motion.section>
 
@@ -256,12 +256,12 @@ const UnitsPage = () => {
                         <p className="text-xs text-blue-600 font-medium mb-2">
                           {member.title}
                         </p>
-                        <a
+                        {/* <a
                           href={`mailto:${member.contact}`}
                           className="text-xs text-gray-500 flex items-center justify-center gap-1"
                         >
                           <Mail size={12} /> Contact
-                        </a>
+                        </a> */}
                       </div>
                     ))}
                   </div>
