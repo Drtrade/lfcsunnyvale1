@@ -132,6 +132,36 @@ const Footer = () => {
               />
               livingfaithchurchsunnyvale@gmail.com
             </a>
+            <a
+              href="mailto:livingfaithchurchsunnyvale@gmail.com"
+              className="text-gray-400 text-sm hover:text-white transition-colors flex items-center group break-all"
+            >
+              <Mail
+                className="mr-2 text-blue-500 group-hover:scale-110 transition-transform flex-shrink-0"
+                size={16}
+              />
+              lfcsunnyvaletestimonies.org@gmail.com
+            </a>
+            <a
+              href="mailto:livingfaithchurchsunnyvale@gmail.com"
+              className="text-gray-400 text-sm hover:text-white transition-colors flex items-center group break-all"
+            >
+              <Mail
+                className="mr-2 text-blue-500 group-hover:scale-110 transition-transform flex-shrink-0"
+                size={16}
+              />
+              lfcsunnyvalejobseekers@gmail.com
+            </a>
+            <a
+              href="mailto:livingfaithchurchsunnyvale@gmail.com"
+              className="text-gray-400 text-sm hover:text-white transition-colors flex items-center group break-all"
+            >
+              <Mail
+                className="mr-2 text-blue-500 group-hover:scale-110 transition-transform flex-shrink-0"
+                size={16}
+              />
+              lfcsunnyvalejobop@gmail.com
+            </a>
           </div>
         </div>
 

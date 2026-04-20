@@ -17,6 +17,39 @@ const openWhatsApp = (number, message) => {
   window.open(`https://wa.me/${number}?text=${encoded}`, "_blank");
 };
 
+// New Image Component with Loading State
+const LeaderImage = ({ src, alt, name }) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  return (
+    <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden relative">
+      {loading && !error && (
+        <div className="absolute inset-0 animate-pulse bg-gray-300" />
+      )}
+      
+      {src && !error ? (
+        <img
+          src={src}
+          alt={alt}
+          className={`w-full h-full object-cover object-top transition-opacity duration-300 ${
+            loading ? 'opacity-0' : 'opacity-100'
+          }`}
+          onLoad={() => setLoading(false)}
+          onError={() => {
+            setLoading(false);
+            setError(true);
+          }}
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center bg-gray-300">
+          <Users className="text-white" size={24} />
+        </div>
+      )}
+    </div>
+  );
+};
+
 const UnitsPage = () => {
   const [selectedUnit, setSelectedUnit] = useState(null);
 
@@ -136,20 +169,6 @@ const UnitsPage = () => {
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-snug">
             {unitsData.closingNote.description}
           </p>
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {unitsData.closingNote.cta.map((button, index) => (
-              <button
-                key={index}
-                className={`${
-                  index === 0
-                    ? "bg-white text-blue-600"
-                    : "bg-transparent border-2 border-white text-white"
-                } px-8 py-4 rounded-xl font-bold shadow-lg w-full sm:w-auto transition-transform active:scale-95`}
-              >
-                {button.text}
-              </button>
-            ))}
-          </div> */}
         </div>
       </motion.section>
 
@@ -227,7 +246,7 @@ const UnitsPage = () => {
                     Unit Leadership
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {/* Simplified Member Card Helper */}
+                    {/* Updated Member Cards with Loading State */}
                     {[
                       selectedUnit.leadership.leader,
                       selectedUnit.leadership.assistant,
@@ -237,31 +256,17 @@ const UnitsPage = () => {
                         key={i}
                         className="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100"
                       >
-                        <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
-                          {member.image ? (
-                            <img
-                              src={member.image}
-                              alt={member.name}
-                              className="w-full h-full object-cover object-top"
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center bg-gray-300">
-                              <Users className="text-white" />
-                            </div>
-                          )}
-                        </div>
+                        <LeaderImage 
+                          src={member.image} 
+                          alt={member.name}
+                          name={member.name}
+                        />
                         <h4 className="font-bold text-gray-800 text-sm">
                           {member.name}
                         </h4>
                         <p className="text-xs text-blue-600 font-medium mb-2">
                           {member.title}
                         </p>
-                        {/* <a
-                          href={`mailto:${member.contact}`}
-                          className="text-xs text-gray-500 flex items-center justify-center gap-1"
-                        >
-                          <Mail size={12} /> Contact
-                        </a> */}
                       </div>
                     ))}
                   </div>

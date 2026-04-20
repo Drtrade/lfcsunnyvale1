@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { 
@@ -15,6 +15,41 @@ import {
   User
 } from 'lucide-react';
 import aboutData from '../data/aboutData';
+
+// Image Component with Loading State and Hover Effect
+const PastorImage = ({ src, alt }) => {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  return (
+    <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center border-4 border-white shadow-lg">
+      {loading && !error && (
+        <div className="absolute inset-0 animate-pulse bg-gray-300" />
+      )}
+      
+      {src && !error ? (
+        <img 
+          src={src} 
+          alt={alt}
+          className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
+            loading ? 'opacity-0' : 'opacity-100'
+          }`}
+          style={{ 
+            objectPosition: 'center 15%',
+            transformOrigin: 'center 30%'
+          }}
+          onLoad={() => setLoading(false)}
+          onError={() => {
+            setLoading(false);
+            setError(true);
+          }}
+        />
+      ) : (
+        <User className="text-gray-300" size={80} />
+      )}
+    </div>
+  );
+};
 
 const AboutPage = () => {
   // Icon mapping for core values
@@ -42,6 +77,7 @@ const AboutPage = () => {
   };
 
   const navigate = useNavigate();
+  
   return (
     <div className="space-y-12 md:space-y-20 px-4 md:px-0 pb-16">
       
@@ -120,17 +156,10 @@ const AboutPage = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center text-center md:text-left">
             <div className="relative group flex-shrink-0">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center border-4 border-white shadow-lg">
-                {aboutData.leadership.residentPastor.image ? (
-                  <img 
-                    src={aboutData.leadership.residentPastor.image} 
-                    alt={aboutData.leadership.residentPastor.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                ) : (
-                  <User className="text-gray-300" size={80} />
-                )}
-              </div>
+              <PastorImage
+                src={aboutData.leadership.residentPastor.image}
+                alt={aboutData.leadership.residentPastor.name}
+              />
             </div>
             
             <div className="flex-grow">
@@ -139,17 +168,9 @@ const AboutPage = () => {
                 <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership.residentPastor.title}</p>
               </div>
               <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership.residentPastor.description}"</p>
-              {/* <a
-                href={`mailto:${aboutData.leadership.residentPastor.email}`}
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 w-full sm:w-auto justify-center"
-              >
-                <Mail size={18} />
-                <span>Message Pastor</span>
-              </a> */}
             </div>
           </div>
         </motion.div>
-
 
         {/* Assistant Resident Pastor Card */}
         <motion.div
@@ -161,38 +182,21 @@ const AboutPage = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center text-center md:text-left">
             <div className="relative group flex-shrink-0">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden bg-gray-100 flex items-center justify-center border-4 border-white shadow-lg">
-                {aboutData.leadership. assistantPastor.image ? (
-                  <img 
-                    src={aboutData.leadership. assistantPastor.image} 
-                    alt={aboutData.leadership. assistantPastor.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                ) : (
-                  <User className="text-gray-300" size={80} />
-                )}
-              </div>
+              <PastorImage
+                src={aboutData.leadership.assistantPastor.image}
+                alt={aboutData.leadership.assistantPastor.name}
+              />
             </div>
             
             <div className="flex-grow">
               <div className="mb-4">
-                <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-1">{aboutData.leadership. assistantPastor.name}</h3>
-                <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership. assistantPastor.title}</p>
+                <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-1">{aboutData.leadership.assistantPastor.name}</h3>
+                <p className="text-blue-600 font-bold uppercase tracking-widest text-sm md:text-base">{aboutData.leadership.assistantPastor.title}</p>
               </div>
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership. assistantPastor.description}"</p>
-              {/* <a
-                href={`mailto:${aboutData.leadership. assistantPastor.email}`}
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 w-full sm:w-auto justify-center"
-              >
-                <Mail size={18} />
-                <span>Message Pastor</span>
-              </a> */}
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 italic">"{aboutData.leadership.assistantPastor.description}"</p>
             </div>
           </div>
         </motion.div>
-
-        
-       
       </section>
 
       {/* Our Story & Milestones */}

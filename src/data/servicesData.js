@@ -52,7 +52,7 @@ export const servicesData = {
       day: "Monday - Friday",
       title: "covenant Hour of Prayer (CHOP)",
       times: [
-        { service: "Weekday Morning Prayer", time: "6:00 AM - 7:00 AM" },
+        { service: "Monday - Friday Morning Prayer", time: "6:00 AM - 7:00 AM" },
         { service: "Saturday Morning Prayer", time: "7:00 AM - 8:00 AM" },
       ],
       description:
@@ -124,68 +124,68 @@ export const servicesData = {
         "Specialized Workshops on Leadership and Impact",
       ],
     },
-    {
-      id: "shiloh",
-      title: " Shiloh 2026: Breaking New Ground",
-      dates: "December 8-13, 2026",
-      startDate: "2026-12-08",
-      endDate: "2026-12-13",
-      description:
-        "Our annual prophetic gathering where we receive divine impartation, fresh mandates, and supernatural breakthroughs for the new year. Join thousands of believers for life-transforming encounters with God.",
-      fullDescription:
-        'Shiloh is our flagship annual program where heaven meets earth. Experience powerful worship, prophetic declarations, healing miracles, and destiny-shaping encounters. This year\'s theme "Breaking New Ground" positions you for unprecedented advancement in every area of your life.',
-      color: "from-blue-800 to-purple-700",
-      icon: "special",
-      isActive: false, // Set to true when the event is active
-      highlights: [
-        "Prophetic declarations and impartations",
-        "Healing and miracles services",
-        "Praise and worship nights",
-      ],
-    },
-    {
-      id: "easter-2026",
-      title: "Easter Faith Convention 2026: (Wings of Faith)",
-      dates: "April 2 - April 6, 2026 (Annual)",
-      // Starting on the Thursday (Passion Week) through Easter Monday
-      startDate: "2026-04-02",
-      duration: "5 Days",
-      description:
-        "A global celebration of the resurrection power of Christ, specifically themed to launch every believer into new realms of glory on the Wings of Faith.",
-      fullDescription:
-        "Join the worldwide Winners' family for the 2026 Easter Faith Convention. This is a season of supernatural liberation where we celebrate the triumph of Christ over death and the grave. Under the theme 'Wings of Faith,' these services are designed to activate the prophetic mandate of liberation in the lives of all members, featuring high-praise celebrations, the Communion of Life, and specialized prophetic ministrations.",
-      color: "from-red-700 to-blue-800",
-      icon: "easter",
-      isActive: false, // Set to true when the event is active
-      highlights: [
-        "Easter Sunday Resurrection Celebration",
-        "Special Covenant Day of Trumpet Service",
-        "Communion of Life and Liberation Ministrations",
-        "Prophetic Encounters for Family Breakthrough",
-      ],
-    },
+    // {
+    //   id: "shiloh",
+    //   title: " Shiloh 2026: Breaking New Ground",
+    //   dates: "December 8-13, 2026",
+    //   startDate: "2026-12-08",
+    //   endDate: "2026-12-13",
+    //   description:
+    //     "Our annual prophetic gathering where we receive divine impartation, fresh mandates, and supernatural breakthroughs for the new year. Join thousands of believers for life-transforming encounters with God.",
+    //   fullDescription:
+    //     'Shiloh is our flagship annual program where heaven meets earth. Experience powerful worship, prophetic declarations, healing miracles, and destiny-shaping encounters. This year\'s theme "Breaking New Ground" positions you for unprecedented advancement in every area of your life.',
+    //   color: "from-blue-800 to-purple-700",
+    //   icon: "special",
+    //   isActive: false, // Set to true when the event is active
+    //   highlights: [
+    //     "Prophetic declarations and impartations",
+    //     "Healing and miracles services",
+    //     "Praise and worship nights",
+    //   ],
+    // },
+    // {
+    //   id: "easter-2026",
+    //   title: "Easter Faith Convention 2026: (Wings of Faith)",
+    //   dates: "April 2 - April 6, 2026 (Annual)",
+    //   // Starting on the Thursday (Passion Week) through Easter Monday
+    //   startDate: "2026-04-02",
+    //   duration: "5 Days",
+    //   description:
+    //     "A global celebration of the resurrection power of Christ, specifically themed to launch every believer into new realms of glory on the Wings of Faith.",
+    //   fullDescription:
+    //     "Join the worldwide Winners' family for the 2026 Easter Faith Convention. This is a season of supernatural liberation where we celebrate the triumph of Christ over death and the grave. Under the theme 'Wings of Faith,' these services are designed to activate the prophetic mandate of liberation in the lives of all members, featuring high-praise celebrations, the Communion of Life, and specialized prophetic ministrations.",
+    //   color: "from-red-700 to-blue-800",
+    //   icon: "easter",
+    //   isActive: false, // Set to true when the event is active
+    //   highlights: [
+    //     "Easter Sunday Resurrection Celebration",
+    //     "Special Covenant Day of Trumpet Service",
+    //     "Communion of Life and Liberation Ministrations",
+    //     "Prophetic Encounters for Family Breakthrough",
+    //   ],
+    // },
 
-    {
-      id: "fasting",
-      title: "21 Days of Fasting & Prayer",
-      dates: "Starts Second Monday of January (Annual)",
-      // This will be calculated dynamically based on the current year
-      startDate: "2025-01-12", // Second Monday of January 2026
-      duration: "21 Days",
-      description:
-        "Begin each year with 21 days of consecration, prayer, and fasting to receive divine direction, spiritual renewal, and breakthrough for the year ahead.",
-      fullDescription:
-        "This corporate fast is a powerful way to start the year right. Through prayer, fasting, and the Word, we seek God's face for personal breakthroughs, family restoration, business success, and spiritual growth. Daily prayer points and teaching materials provided.",
-      color: "from-purple-700 to-red-600",
-      icon: "fasting",
-      isActive: false, // Set to true when the fasting period is active
-      highlights: [
-        "Daily prayer pounts and teachings",
-        "Morning and evening prayer sessions",
-        "Spiritual growth and discipline",
-        "Corporate breakthrough and testimonies",
-      ],
-    },
+    // {
+    //   id: "fasting",
+    //   title: "21 Days of Fasting & Prayer",
+    //   dates: "Starts Second Monday of January (Annual)",
+    //   // This will be calculated dynamically based on the current year
+    //   startDate: "2025-01-12", // Second Monday of January 2026
+    //   duration: "21 Days",
+    //   description:
+    //     "Begin each year with 21 days of consecration, prayer, and fasting to receive divine direction, spiritual renewal, and breakthrough for the year ahead.",
+    //   fullDescription:
+    //     "This corporate fast is a powerful way to start the year right. Through prayer, fasting, and the Word, we seek God's face for personal breakthroughs, family restoration, business success, and spiritual growth. Daily prayer points and teaching materials provided.",
+    //   color: "from-purple-700 to-red-600",
+    //   icon: "fasting",
+    //   isActive: false, // Set to true when the fasting period is active
+    //   highlights: [
+    //     "Daily prayer pounts and teachings",
+    //     "Morning and evening prayer sessions",
+    //     "Spiritual growth and discipline",
+    //     "Corporate breakthrough and testimonies",
+    //   ],
+    // },
   ],
 
   // Monthly Programs (First week)

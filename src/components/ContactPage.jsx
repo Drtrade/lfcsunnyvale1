@@ -15,7 +15,7 @@ import contactData from "../data/contactData";
 
 const ContactPage = () => {
   // Replace 'mdaygabk' with your actual Formspree ID if it changes
-  const [state, handleSubmit] = useForm("mdaygabk");
+  const [state, handleSubmit] = useForm("xyklpoyg");
 
   // Success State View
   if (state.succeeded) {
@@ -72,6 +72,20 @@ const ContactPage = () => {
         </p>
       </motion.div>
 
+{/* Map Section */}
+      <div className="rounded-3xl overflow-hidden shadow-lg border-2 border-gray-100 h-96">
+        <iframe
+          src={contactData.mapEmbedUrl}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          title="Church Location"
+        ></iframe>
+      </div>
+
+    
       {/* Contact Grid */}
       <section className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Left Side: Info Cards */}
@@ -81,50 +95,7 @@ const ContactPage = () => {
           transition={{ delay: 0.3 }}
           className="lg:col-span-2 space-y-6 order-2 lg:order-1"
         >
-          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border-2 border-gray-100">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
-              Get in Touch
-            </h3>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="text-blue-600" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-1">Address</h4>
-                  <p className="text-gray-600 text-sm md:text-base">
-                    {contactData.contactDetails.address.line1}
-                    <br />
-                    {contactData.contactDetails.address.line2}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="text-green-600" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
-                  <p className="text-gray-600 text-sm md:text-base">
-                    {contactData.contactDetails.phone}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mail className="text-purple-600" size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
-                  <p className="text-gray-600 text-sm md:text-base break-all">
-                    {contactData.contactDetails.email}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+         
 
           {/* Social Card */}
           <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border-2 border-gray-100 text-center">
@@ -253,21 +224,56 @@ const ContactPage = () => {
               </motion.button>
             </form>
           </div>
+       
+       {/* Contact Information */}
         </motion.div>
-      </section>
 
-      {/* Map Section */}
-      <div className="rounded-3xl overflow-hidden shadow-lg border-2 border-gray-100 h-96">
-        <iframe
-          src={contactData.mapEmbedUrl}
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          title="Church Location"
-        ></iframe>
-      </div>
+         <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border-2 border-gray-100">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
+              Get in Touch
+            </h3>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-blue-600" size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Address</h4>
+                  <p className="text-gray-600 text-sm md:text-base">
+                    {contactData.contactDetails.address.line1}
+                    <br />
+                    {contactData.contactDetails.address.line2}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="text-green-600" size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Phone</h4>
+                  <p className="text-gray-600 text-sm md:text-base">
+                    {contactData.contactDetails.phone}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="text-purple-600" size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
+                  <p className="text-gray-600 text-sm md:text-base break-all">
+                    {contactData.contactDetails.email}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </section>
 
       {/* Restored Closing Message Section */}
       <motion.section
