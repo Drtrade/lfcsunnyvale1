@@ -247,7 +247,8 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
+{/* Phone number  */}
+              {/* <div className="flex items-start space-x-4">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="text-green-600" size={20} />
                 </div>
@@ -257,7 +258,7 @@ const ContactPage = () => {
                     {contactData.contactDetails.phone}
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-start space-x-4">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
