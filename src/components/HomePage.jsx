@@ -37,7 +37,7 @@ const HomePage = () => {
     if ((day === 0 && currentTime >= 660) || day === 1 || day === 2) {
       return { title: "Midweek Communion Service", time: "5:30 PM - 7:00 PM", day: "Wednesday", description: "Experience the transforming power of communion and the Word", type: "communion" };
     }
-    return { title: "Covenant Day of Vengeance ", time: "7:00 AM - 9:00 AM or 9:00 AM - 11:00 AM", day: "This Sunday", description: "Join us for powerful worship, inspiring messages, and divine encounters", type: "celebration" };
+    return { title: "Covenant Day of Exemption ", time: "7:00 AM - 9:00 AM or 9:00 AM - 11:00 AM", day: "This Sunday", description: "Join us for powerful worship, inspiring messages, and divine encounters", type: "celebration" };
   };
   
 
